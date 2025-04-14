@@ -849,7 +849,7 @@
                     </tr>\
                     <tr>\
                         <th scope="row">length_km</th>\
-                        <td class="visible-with-data" id="length_km">' + (feature.properties['length_km'] !== null ? autolinker.link(String(feature.properties['length_km']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="length_km">' + (feature.properties['length_km'] !== null ? autolinker.link(Number(feature.properties['length_km']).toFixed(2).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
