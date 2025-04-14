@@ -112,6 +112,20 @@
         });
         layer_GoogleTerrainHybrid_0;
         map.addLayer(layer_GoogleTerrainHybrid_0);
+
+        map.createPane('pane_GoogleSatelliteHybrid_0');
+        map.getPane('pane_GoogleSatelliteHybrid_0').style.zIndex = 400;
+        var layer_GoogleSatelliteHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatelliteHybrid_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_GoogleSatelliteHybrid_0;
+        map.addLayer(layer_GoogleSatelliteHybrid_0);
         function pop_watercourses_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -221,29 +235,42 @@
         function style_watercourses_1_0() {
             return {
                 pane: 'pane_watercourses_1',
-                opacity: 1,
-                color: 'rgba(100,152,210,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: true,
+                color: 'rgba(100,152,210,0.8)',
+                weight: 2.0,
                 fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(165,191,221,1.0)',
+                fillOpacity: 0.7,
+                fillColor: 'rgba(165,191,221,0.6)',
+                lineCap: 'round',
+                lineJoin: 'round',
+                interactive: false,
+            }
+        }
+        function style_watercourses_1_1() {
+            return {
+                pane: 'pane_watercourses_1',
+                stroke: true,
+                color: 'rgba(100,152,210,0.4)',
+                weight: 4.0,
+                fill: true,
+                fillOpacity: 0.3,
+                fillColor: 'rgba(165,191,221,0.3)',
+                lineCap: 'round',
+                lineJoin: 'round',
                 interactive: false,
             }
         }
         map.createPane('pane_watercourses_1');
         map.getPane('pane_watercourses_1').style.zIndex = 401;
         map.getPane('pane_watercourses_1').style['mix-blend-mode'] = 'normal';
-        var layer_watercourses_1 = new L.geoJson(json_watercourses_1, {
+        var layer_watercourses_1 = new L.geoJson.multiStyle(json_watercourses_1, {
             attribution: '',
             interactive: false,
             dataVar: 'json_watercourses_1',
             layerName: 'layer_watercourses_1',
             pane: 'pane_watercourses_1',
             onEachFeature: pop_watercourses_1,
-            style: style_watercourses_1_0,
+            styles: [style_watercourses_1_0,style_watercourses_1_1]
         });
         bounds_group.addLayer(layer_watercourses_1);
         function pop_atv_trails_2(feature, layer) {
@@ -304,27 +331,40 @@
         function style_atv_trails_2_0() {
             return {
                 pane: 'pane_atv_trails_2',
-                opacity: 1,
-                color: 'rgba(114,155,111,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: false,
+                stroke: true,
+                color: 'rgba(114,155,111,0.8)',
+                weight: 3.0,
+                fill: false,
+                dashArray: '5,5',
+                lineCap: 'round',
+                lineJoin: 'round',
+                interactive: true,
+            }
+        }
+        function style_atv_trails_2_1() {
+            return {
+                pane: 'pane_atv_trails_2',
+                stroke: true,
+                color: 'rgba(114,155,111,0.4)',
+                weight: 5.0,
+                fill: false,
+                dashArray: '10,10',
+                lineCap: 'round',
+                lineJoin: 'round',
+                interactive: true,
             }
         }
         map.createPane('pane_atv_trails_2');
         map.getPane('pane_atv_trails_2').style.zIndex = 402;
         map.getPane('pane_atv_trails_2').style['mix-blend-mode'] = 'normal';
-        var layer_atv_trails_2 = new L.geoJson(json_atv_trails_2, {
+        var layer_atv_trails_2 = new L.geoJson.multiStyle(json_atv_trails_2, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_atv_trails_2',
             layerName: 'layer_atv_trails_2',
             pane: 'pane_atv_trails_2',
             onEachFeature: pop_atv_trails_2,
-            style: style_atv_trails_2_0,
+            styles: [style_atv_trails_2_0,style_atv_trails_2_1]
         });
         bounds_group.addLayer(layer_atv_trails_2);
         function pop_snowmobile_trails_3(feature, layer) {
@@ -379,27 +419,40 @@
         function style_snowmobile_trails_3_0() {
             return {
                 pane: 'pane_snowmobile_trails_3',
-                opacity: 1,
-                color: 'rgba(141,90,153,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: false,
+                stroke: true,
+                color: 'rgba(141,90,153,0.8)',
+                weight: 3.0,
+                fill: false,
+                dashArray: '5,5',
+                lineCap: 'round',
+                lineJoin: 'round',
+                interactive: true,
+            }
+        }
+        function style_snowmobile_trails_3_1() {
+            return {
+                pane: 'pane_snowmobile_trails_3',
+                stroke: true,
+                color: 'rgba(141,90,153,0.4)',
+                weight: 5.0,
+                fill: false,
+                dashArray: '10,10',
+                lineCap: 'round',
+                lineJoin: 'round',
+                interactive: true,
             }
         }
         map.createPane('pane_snowmobile_trails_3');
         map.getPane('pane_snowmobile_trails_3').style.zIndex = 403;
         map.getPane('pane_snowmobile_trails_3').style['mix-blend-mode'] = 'normal';
-        var layer_snowmobile_trails_3 = new L.geoJson(json_snowmobile_trails_3, {
+        var layer_snowmobile_trails_3 = new L.geoJson.multiStyle(json_snowmobile_trails_3, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_snowmobile_trails_3',
             layerName: 'layer_snowmobile_trails_3',
             pane: 'pane_snowmobile_trails_3',
             onEachFeature: pop_snowmobile_trails_3,
-            style: style_snowmobile_trails_3_0,
+            styles: [style_snowmobile_trails_3_0,style_snowmobile_trails_3_1]
         });
         bounds_group.addLayer(layer_snowmobile_trails_3);
         function pop_protected_watersheds_4(feature, layer) {
@@ -445,29 +498,40 @@
         function style_protected_watersheds_4_0() {
             return {
                 pane: 'pane_protected_watersheds_4',
-                opacity: 1,
+                stroke: true,
                 color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,1.0)',
+                fillOpacity: 0.7,
+                fillColor: 'rgba(255,158,23,0.6)',
+                dashArray: '5,5',
+                interactive: false,
+            }
+        }
+        function style_protected_watersheds_4_1() {
+            return {
+                pane: 'pane_protected_watersheds_4',
+                stroke: true,
+                color: 'rgba(35,35,35,0.4)',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 0.3,
+                fillColor: 'rgba(255,158,23,0.3)',
+                dashArray: '5,5',
                 interactive: false,
             }
         }
         map.createPane('pane_protected_watersheds_4');
         map.getPane('pane_protected_watersheds_4').style.zIndex = 404;
         map.getPane('pane_protected_watersheds_4').style['mix-blend-mode'] = 'normal';
-        var layer_protected_watersheds_4 = new L.geoJson(json_protected_watersheds_4, {
+        var layer_protected_watersheds_4 = new L.geoJson.multiStyle(json_protected_watersheds_4, {
             attribution: '',
             interactive: false,
             dataVar: 'json_protected_watersheds_4',
             layerName: 'layer_protected_watersheds_4',
             pane: 'pane_protected_watersheds_4',
             onEachFeature: pop_protected_watersheds_4,
-            style: style_protected_watersheds_4_0,
+            styles: [style_protected_watersheds_4_0,style_protected_watersheds_4_1]
         });
         bounds_group.addLayer(layer_protected_watersheds_4);
         function pop_nature_legacy_areas_5(feature, layer) {
@@ -501,29 +565,40 @@
         function style_nature_legacy_areas_5_0() {
             return {
                 pane: 'pane_nature_legacy_areas_5',
-                opacity: 1,
+                stroke: true,
                 color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(231,113,72,1.0)',
+                fillOpacity: 0.7,
+                fillColor: 'rgba(231,113,72,0.6)',
+                dashArray: '5,5',
+                interactive: false,
+            }
+        }
+        function style_nature_legacy_areas_5_1() {
+            return {
+                pane: 'pane_nature_legacy_areas_5',
+                stroke: true,
+                color: 'rgba(35,35,35,0.4)',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 0.3,
+                fillColor: 'rgba(231,113,72,0.3)',
+                dashArray: '5,5',
                 interactive: false,
             }
         }
         map.createPane('pane_nature_legacy_areas_5');
         map.getPane('pane_nature_legacy_areas_5').style.zIndex = 405;
         map.getPane('pane_nature_legacy_areas_5').style['mix-blend-mode'] = 'normal';
-        var layer_nature_legacy_areas_5 = new L.geoJson(json_nature_legacy_areas_5, {
+        var layer_nature_legacy_areas_5 = new L.geoJson.multiStyle(json_nature_legacy_areas_5, {
             attribution: '',
             interactive: false,
             dataVar: 'json_nature_legacy_areas_5',
             layerName: 'layer_nature_legacy_areas_5',
             pane: 'pane_nature_legacy_areas_5',
             onEachFeature: pop_nature_legacy_areas_5,
-            style: style_nature_legacy_areas_5_0,
+            styles: [style_nature_legacy_areas_5_0,style_nature_legacy_areas_5_1]
         });
         bounds_group.addLayer(layer_nature_legacy_areas_5);
         function pop_Protected_Natural_Areas_6(feature, layer) {
@@ -590,29 +665,40 @@
         function style_Protected_Natural_Areas_6_0() {
             return {
                 pane: 'pane_Protected_Natural_Areas_6',
-                opacity: 1,
+                stroke: true,
                 color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(243,166,178,1.0)',
+                fillOpacity: 0.7,
+                fillColor: 'rgba(243,166,178,0.6)',
+                dashArray: '5,5',
+                interactive: false,
+            }
+        }
+        function style_Protected_Natural_Areas_6_1() {
+            return {
+                pane: 'pane_Protected_Natural_Areas_6',
+                stroke: true,
+                color: 'rgba(35,35,35,0.4)',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 0.3,
+                fillColor: 'rgba(243,166,178,0.3)',
+                dashArray: '5,5',
                 interactive: false,
             }
         }
         map.createPane('pane_Protected_Natural_Areas_6');
         map.getPane('pane_Protected_Natural_Areas_6').style.zIndex = 406;
         map.getPane('pane_Protected_Natural_Areas_6').style['mix-blend-mode'] = 'normal';
-        var layer_Protected_Natural_Areas_6 = new L.geoJson(json_Protected_Natural_Areas_6, {
+        var layer_Protected_Natural_Areas_6 = new L.geoJson.multiStyle(json_Protected_Natural_Areas_6, {
             attribution: '',
             interactive: false,
             dataVar: 'json_Protected_Natural_Areas_6',
             layerName: 'layer_Protected_Natural_Areas_6',
             pane: 'pane_Protected_Natural_Areas_6',
             onEachFeature: pop_Protected_Natural_Areas_6,
-            style: style_Protected_Natural_Areas_6_0,
+            styles: [style_Protected_Natural_Areas_6_0,style_Protected_Natural_Areas_6_1]
         });
         bounds_group.addLayer(layer_Protected_Natural_Areas_6);
         function pop_clear_cuts_7(feature, layer) {
@@ -634,19 +720,26 @@
         function style_clear_cuts_7_0() {
             return {
                 pane: 'pane_clear_cuts_7',
+                stroke: true,
+                color: 'rgba(179,90,42,0.8)',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 0.7,
+                fillColor: 'rgba(179,90,42,0.6)',
+                dashArray: '3,3',
                 interactive: false,
             }
         }
         function style_clear_cuts_7_1() {
             return {
                 pane: 'pane_clear_cuts_7',
-                opacity: 1,
-                color: 'rgba(179,90,42,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fillOpacity: 0,
+                stroke: true,
+                color: 'rgba(179,90,42,0.4)',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 0.3,
+                fillColor: 'rgba(179,90,42,0.3)',
+                dashArray: '2,2',
                 interactive: false,
             }
         }
@@ -660,7 +753,7 @@
             layerName: 'layer_clear_cuts_7',
             pane: 'pane_clear_cuts_7',
             onEachFeature: pop_clear_cuts_7,
-            styles: [style_clear_cuts_7_0,style_clear_cuts_7_1,]
+            styles: [style_clear_cuts_7_0,style_clear_cuts_7_1]
         });
         bounds_group.addLayer(layer_clear_cuts_7);
         function pop_SML_WETLANDS_8(feature, layer) {
@@ -697,16 +790,26 @@
         function style_SML_WETLANDS_8_0() {
             return {
                 pane: 'pane_SML_WETLANDS_8',
-                stroke: false, 
+                stroke: true,
+                color: 'rgba(115,178,115,0.8)',
+                weight: 0.5,
                 fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(163,205,185,1.0)',
+                fillOpacity: 0.7,
+                fillColor: 'rgba(134,181,103,0.6)',
+                dashArray: '5,3',
                 interactive: false,
             }
         }
         function style_SML_WETLANDS_8_1() {
             return {
                 pane: 'pane_SML_WETLANDS_8',
+                stroke: true,
+                color: 'rgba(98,145,87,0.4)',
+                weight: 0.5,
+                fill: true,
+                fillOpacity: 0.3,
+                fillColor: 'rgba(144,197,125,0.3)',
+                dashArray: '3,2',
                 interactive: false,
             }
         }
@@ -871,27 +974,40 @@
         function style_COASTAL_LINK_10_0() {
             return {
                 pane: 'pane_COASTAL_LINK_10',
-                opacity: 1,
-                color: 'rgba(152,125,183,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
+                stroke: true,
+                color: 'rgba(152,125,183,0.8)',
+                weight: 4.0,
+                fill: false,
+                dashArray: '10,5',
+                lineCap: 'round',
+                lineJoin: 'round',
+                interactive: true,
+            }
+        }
+        function style_COASTAL_LINK_10_1() {
+            return {
+                pane: 'pane_COASTAL_LINK_10',
+                stroke: true,
+                color: 'rgba(152,125,183,0.4)',
+                weight: 6.0,
+                fill: false,
+                dashArray: '15,10',
+                lineCap: 'round',
+                lineJoin: 'round',
                 interactive: true,
             }
         }
         map.createPane('pane_COASTAL_LINK_10');
         map.getPane('pane_COASTAL_LINK_10').style.zIndex = 410;
         map.getPane('pane_COASTAL_LINK_10').style['mix-blend-mode'] = 'normal';
-        var layer_COASTAL_LINK_10 = new L.geoJson(json_COASTAL_LINK_10, {
+        var layer_COASTAL_LINK_10 = new L.geoJson.multiStyle(json_COASTAL_LINK_10, {
             attribution: '',
             interactive: true,
             dataVar: 'json_COASTAL_LINK_10',
             layerName: 'layer_COASTAL_LINK_10',
             pane: 'pane_COASTAL_LINK_10',
             onEachFeature: pop_COASTAL_LINK_10,
-            style: style_COASTAL_LINK_10_0,
+            styles: [style_COASTAL_LINK_10_0,style_COASTAL_LINK_10_1]
         });
         bounds_group.addLayer(layer_COASTAL_LINK_10);
         var osmGeocoder = new L.Control.Geocoder({
@@ -918,7 +1034,8 @@
             {label: '<img src="legend/atv_trails_2.png" /> atv_trails', layer: layer_atv_trails_2},]},
             {label: '<img src="legend/watercourses_1.png" /> watercourses', layer: layer_watercourses_1},
         {label: '<b>Basemaps</b>', selectAllCheckbox: true, children: [
-            {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},]
+            {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },
+            {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_0, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
