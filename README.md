@@ -1,6 +1,6 @@
 # Seven Mile Lake Web Map
 
-A web-based interactive map for the Seven Mile Lake project, exported from QGIS to Leaflet.
+This is a web-based interactive map for the Seven Mile Lake project, exported from QGIS to Leaflet.
 
 ## Project Structure
 
@@ -35,21 +35,9 @@ seven-mile-lake/
 
 ## Development
 
-This project was created by exporting a QGIS project to a web map using the QGIS2Web plugin. The main components are:
+This project was created by exporting a QGIS project to a web map using the [`qgis2Web`](https://github.com/qgis2web/qgis2web) plugin. The main components are:
 
 - Leaflet.js for map rendering
 - Custom CSS for styling
 - GeoJSON data layers
 - JavaScript for map interactions
-
-## Data Sources
-
-[Add information about your data sources here]
-
-## License
-
-[Add your license information here]
-
-## Contact
-
-[Add contact information here]
