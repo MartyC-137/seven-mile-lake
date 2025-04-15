@@ -174,7 +174,6 @@
             style: style_geology_0_0,
         });
         bounds_group.addLayer(layer_geology_0);
-        map.addLayer(layer_geology_0);
         function pop_watercourses_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1070,6 +1069,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
+            {label: '<img src="legend/geology_0.png" /> Geology', layer: layer_geology_0},
             {label: '<img src="legend/COASTAL_LINK_10.png" /> Coastal Link Trail', layer: layer_COASTAL_LINK_10},
             {label: '<img src="legend/SML_PLANNED_TRAILS_9.png" /> Phase 1 Trails', layer: layer_SML_PLANNED_TRAILS_9},
             {label: '<img src="legend/SML_WETLANDS_8.png" /> Wetlands', layer: layer_SML_WETLANDS_8},
