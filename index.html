@@ -146,18 +146,42 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_geology_0_0() {
+        function style_geology_0_0(feature) {
+            var color;
+            var nb_code = feature.properties['nb_code'];
+            
+            // Determine base color based on rock type
+            if (nb_code) {
+                if (nb_code.includes('fi')) { // felsic intrusive rocks (granite)
+                    color = 'rgba(255, 0, 0, 0.5)'; // red
+                } else if (nb_code.includes('ii')) { // intermediate intrusive rocks (diorite)
+                    color = 'rgba(255, 165, 0, 0.5)'; // orange
+                } else if (nb_code.includes('mi')) { // mafic intrusive rocks (gabbro)
+                    color = 'rgba(0, 0, 255, 0.5)'; // blue
+                } else if (nb_code.includes('mv')) { // mafic flows (basalt)
+                    color = 'rgba(0, 100, 0, 0.5)'; // dark green
+                } else if (nb_code.includes('fv')) { // felsic flows (rhyolite)
+                    color = 'rgba(255, 192, 203, 0.5)'; // pink
+                } else if (nb_code.includes('c')) { // clastic sedimentary rocks
+                    color = 'rgba(139, 69, 19, 0.5)'; // brown
+                } else {
+                    color = 'rgba(190, 207, 80, 0.5)'; // default color
+                }
+            } else {
+                color = 'rgba(190, 207, 80, 0.5)'; // default color
+            }
+
             return {
                 pane: 'pane_geology_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                opacity: 0.5,
+                color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(190,207,80,1.0)',
+                fillOpacity: 0.5,
+                fillColor: color,
                 interactive: true,
             }
         }
