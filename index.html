@@ -113,21 +113,49 @@
         var layer_OpenStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             minZoom: 1,
-            maxZoom: 19
+            maxZoom: 19,
+            subdomains: 'abc',
+            tileSize: 256,
+            zoomOffset: 0
         });
 
         // Add Stamen Terrain basemap
         var layer_StamenTerrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
             attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
             minZoom: 1,
-            maxZoom: 18
+            maxZoom: 18,
+            subdomains: 'abcd',
+            tileSize: 256,
+            zoomOffset: 0
         });
 
         // Add CartoDB Positron basemap
-        var layer_CartoDBPositron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        var layer_CartoDBPositron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             minZoom: 1,
-            maxZoom: 19
+            maxZoom: 19,
+            subdomains: 'abcd',
+            tileSize: 256,
+            zoomOffset: 0
+        });
+
+        // Add Esri World Topo Map as an alternative
+        var layer_EsriWorldTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
+            minZoom: 1,
+            maxZoom: 19,
+            tileSize: 256,
+            zoomOffset: 0
+        });
+
+        // Add Thunderforest Outdoors as another alternative
+        var layer_ThunderforestOutdoors = L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=9d0b4a0b0b4a0b0b4a0b0b4a0b0b4a0b', {
+            attribution: '&copy; <a href="https://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            minZoom: 1,
+            maxZoom: 19,
+            subdomains: 'abc',
+            tileSize: 256,
+            zoomOffset: 0
         });
 
         map.createPane('pane_GoogleSatelliteHybrid_0');
@@ -1052,7 +1080,9 @@
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_0, radioGroup: 'bm' },
             {label: "OpenStreetMap", layer: layer_OpenStreetMap, radioGroup: 'bm' },
             {label: "Stamen Terrain", layer: layer_StamenTerrain, radioGroup: 'bm' },
-            {label: "CartoDB Positron", layer: layer_CartoDBPositron, radioGroup: 'bm' },]},]
+            {label: "CartoDB Positron", layer: layer_CartoDBPositron, radioGroup: 'bm' },
+            {label: "Esri World Topo", layer: layer_EsriWorldTopo, radioGroup: 'bm' },
+            {label: "Thunderforest Outdoors", layer: layer_ThunderforestOutdoors, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
