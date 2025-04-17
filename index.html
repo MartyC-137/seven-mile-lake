@@ -138,6 +138,15 @@
             zoomOffset: 0
         });
 
+        // Add Esri World Imagery as another satellite option
+        var layer_EsriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            minZoom: 1,
+            maxZoom: 19,
+            tileSize: 256,
+            zoomOffset: 0
+        });
+
         map.createPane('pane_GoogleSatelliteHybrid_0');
         map.getPane('pane_GoogleSatelliteHybrid_0').style.zIndex = 400;
         var layer_GoogleSatelliteHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
@@ -1058,6 +1067,7 @@
                     {label: '<b>Basemaps</b>', selectAllCheckbox: true, children: [
             {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_0, radioGroup: 'bm' },
+            {label: "ESRI World Imagery", layer: layer_EsriWorldImagery, radioGroup: 'bm' },
             {label: "OpenStreetMap", layer: layer_OpenStreetMap, radioGroup: 'bm' },
             {label: "CartoDB Positron", layer: layer_CartoDBPositron, radioGroup: 'bm' },
             {label: "Esri World Topo", layer: layer_EsriWorldTopo, radioGroup: 'bm' },]},]
