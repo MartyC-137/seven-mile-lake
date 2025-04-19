@@ -150,7 +150,7 @@
         // Create custom P icon for trailhead
         var trailheadIcon = L.divIcon({
             className: 'trailhead-icon',
-            html: '<div style="background-color: black; color: white; width: 30px; height: 30px; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 20px;">P</div>',
+            html: '<div style="color: black; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 20px;">P</div>',
             iconSize: [30, 30],
             iconAnchor: [15, 15]
         });
@@ -163,6 +163,7 @@
 
         // Create trailhead layer group
         var layer_Trailhead = L.layerGroup([trailheadMarker]);
+        layer_Trailhead.addTo(map); // Add to map by default
 
         map.createPane('pane_GoogleSatelliteHybrid_0');
         map.getPane('pane_GoogleSatelliteHybrid_0').style.zIndex = 400;
