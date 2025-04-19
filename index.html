@@ -152,6 +152,15 @@
             zoomOffset: 0
         });
 
+        // Add USGS Topographic basemap
+        var layer_USGSTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>',
+            minZoom: 1,
+            maxZoom: 16,
+            tileSize: 256,
+            zoomOffset: 0
+        });
+
         // Create custom P icon for trailhead
         var trailheadIcon = L.divIcon({
             className: 'trailhead-icon',
@@ -1093,6 +1102,7 @@
             {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_0, radioGroup: 'bm' },
             {label: "ESRI World Imagery", layer: layer_EsriWorldImagery, radioGroup: 'bm' },
+            {label: "USGS Topographic", layer: layer_USGSTopo, radioGroup: 'bm' },
             {label: "OpenStreetMap", layer: layer_OpenStreetMap, radioGroup: 'bm' },
             {label: "CartoDB Positron", layer: layer_CartoDBPositron, radioGroup: 'bm' },
             {label: "Esri World Topo", layer: layer_EsriWorldTopo, radioGroup: 'bm' },]},]
