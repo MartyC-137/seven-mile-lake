@@ -38,19 +38,21 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/CrownLandAOI_1.js"></script>
-        <script src="data/watercourses_2.js"></script>
-        <script src="data/protected_watersheds_3.js"></script>
-        <script src="data/nature_legacy_areas_4.js"></script>
-        <script src="data/Protected_Natural_Areas_5.js"></script>
-        <script src="data/clear_cuts_6.js"></script>
-        <script src="data/SML_WETLANDS_7.js"></script>
-        <script src="data/SML_PLANNED_TRAILS_8.js"></script>
-        <script src="data/COASTAL_LINK_9.js"></script>
+        <script src="data/CrownLandAOI_3.js"></script>
+        <script src="data/Geology_4.js"></script>
+        <script src="data/Watercourses_5.js"></script>
+        <script src="data/Roads_6.js"></script>
+        <script src="data/ProtectedWatersheds_7.js"></script>
+        <script src="data/NatureLegacyAreas_8.js"></script>
+        <script src="data/ProtectedNaturalAreas_9.js"></script>
+        <script src="data/CoastalLinkTrail_10.js"></script>
+        <script src="data/HarvestedForestAreas_11.js"></script>
+        <script src="data/Wetlands_12.js"></script>
+        <script src="data/PlannedTrails_13.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[45.23504492778362,-66.55617408662158],[45.27580322324823,-66.45999406202404]]);
+        }).fitBounds([[45.282248481731685,-66.55339000606446],[45.32300544427646,-66.45712931671133]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -98,10 +100,23 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_ESRITopo_0');
-        map.getPane('pane_ESRITopo_0').style.zIndex = 400;
-        var layer_ESRITopo_0 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-            pane: 'pane_ESRITopo_0',
+        map.createPane('pane_GoogleTerrainHybrid_0');
+        map.getPane('pane_GoogleTerrainHybrid_0').style.zIndex = 400;
+        var layer_GoogleTerrainHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleTerrainHybrid_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_GoogleTerrainHybrid_0;
+        map.addLayer(layer_GoogleTerrainHybrid_0);
+        map.createPane('pane_ESRITopo_1');
+        map.getPane('pane_ESRITopo_1').style.zIndex = 401;
+        var layer_ESRITopo_1 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRITopo_1',
             opacity: 1.0,
             attribution: '',
             minZoom: 1,
@@ -109,34 +124,20 @@
             minNativeZoom: 0,
             maxNativeZoom: 18
         });
-
-        // Add Google Terrain Hybrid basemap
-        var layer_GoogleTerrainHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
-            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-            attribution: 'Google Maps',
+        layer_ESRITopo_1;
+        map.createPane('pane_GoogleSatelliteHybrid_2');
+        map.getPane('pane_GoogleSatelliteHybrid_2').style.zIndex = 402;
+        var layer_GoogleSatelliteHybrid_2 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatelliteHybrid_2',
+            opacity: 1.0,
+            attribution: '',
             minZoom: 1,
-            maxZoom: 28
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
         });
-
-        // Add Google Satellite Hybrid basemap
-        var layer_GoogleSatelliteHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-            attribution: 'Google Maps',
-            minZoom: 1,
-            maxZoom: 28
-        });
-
-        // Add ESRI Satellite basemap
-        var layer_ESRISatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'ESRI',
-            minZoom: 1,
-            maxZoom: 28
-        });
-
-        // Set Google Terrain Hybrid as default basemap
-        layer_GoogleTerrainHybrid.addTo(map);
-        layer_ESRITopo_0;
-        function pop_CrownLandAOI_1(feature, layer) {
+        layer_GoogleSatelliteHybrid_2;
+        function pop_CrownLandAOI_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -192,9 +193,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_CrownLandAOI_1_0() {
+        function style_CrownLandAOI_3_0() {
             return {
-                pane: 'pane_CrownLandAOI_1',
+                pane: 'pane_CrownLandAOI_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -202,20 +203,74 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_CrownLandAOI_1');
-        map.getPane('pane_CrownLandAOI_1').style.zIndex = 401;
-        map.getPane('pane_CrownLandAOI_1').style['mix-blend-mode'] = 'normal';
-        var layer_CrownLandAOI_1 = new L.geoJson(json_CrownLandAOI_1, {
+        map.createPane('pane_CrownLandAOI_3');
+        map.getPane('pane_CrownLandAOI_3').style.zIndex = 403;
+        map.getPane('pane_CrownLandAOI_3').style['mix-blend-mode'] = 'normal';
+        var layer_CrownLandAOI_3 = new L.geoJson(json_CrownLandAOI_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_CrownLandAOI_1',
-            layerName: 'layer_CrownLandAOI_1',
-            pane: 'pane_CrownLandAOI_1',
-            onEachFeature: pop_CrownLandAOI_1,
-            style: style_CrownLandAOI_1_0,
+            dataVar: 'json_CrownLandAOI_3',
+            layerName: 'layer_CrownLandAOI_3',
+            pane: 'pane_CrownLandAOI_3',
+            onEachFeature: pop_CrownLandAOI_3,
+            style: style_CrownLandAOI_3_0,
         });
-        bounds_group.addLayer(layer_CrownLandAOI_1);
-        function pop_watercourses_2(feature, layer) {
+        bounds_group.addLayer(layer_CrownLandAOI_3);
+        function pop_Geology_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['objectid'] !== null ? autolinker.link(String(feature.properties['objectid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">nb_code</th>\
+                        <td class="visible-with-data" id="nb_code">' + (feature.properties['nb_code'] !== null ? autolinker.link(String(feature.properties['nb_code']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shapearea'] !== null ? autolinker.link(String(feature.properties['shapearea']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shapelen'] !== null ? autolinker.link(String(feature.properties['shapelen']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Geology_4_0() {
+            return {
+                pane: 'pane_Geology_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Geology_4');
+        map.getPane('pane_Geology_4').style.zIndex = 404;
+        map.getPane('pane_Geology_4').style['mix-blend-mode'] = 'normal';
+        var layer_Geology_4 = new L.geoJson(json_Geology_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Geology_4',
+            layerName: 'layer_Geology_4',
+            pane: 'pane_Geology_4',
+            onEachFeature: pop_Geology_4,
+            style: style_Geology_4_0,
+        });
+        bounds_group.addLayer(layer_Geology_4);
+        function pop_Watercourses_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id_0'] !== null ? autolinker.link(String(feature.properties['id_0']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -321,9 +376,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_watercourses_2_0() {
+        function style_Watercourses_5_0() {
             return {
-                pane: 'pane_watercourses_2',
+                pane: 'pane_Watercourses_5',
                 opacity: 1,
                 color: 'rgba(100,152,210,1.0)',
                 dashArray: '',
@@ -336,20 +391,71 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_watercourses_2');
-        map.getPane('pane_watercourses_2').style.zIndex = 402;
-        map.getPane('pane_watercourses_2').style['mix-blend-mode'] = 'normal';
-        var layer_watercourses_2 = new L.geoJson(json_watercourses_2, {
+        map.createPane('pane_Watercourses_5');
+        map.getPane('pane_Watercourses_5').style.zIndex = 405;
+        map.getPane('pane_Watercourses_5').style['mix-blend-mode'] = 'normal';
+        var layer_Watercourses_5 = new L.geoJson(json_Watercourses_5, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_watercourses_2',
-            layerName: 'layer_watercourses_2',
-            pane: 'pane_watercourses_2',
-            onEachFeature: pop_watercourses_2,
-            style: style_watercourses_2_0,
+            dataVar: 'json_Watercourses_5',
+            layerName: 'layer_Watercourses_5',
+            pane: 'pane_Watercourses_5',
+            onEachFeature: pop_Watercourses_5,
+            style: style_Watercourses_5_0,
         });
-        bounds_group.addLayer(layer_watercourses_2);
-        function pop_protected_watersheds_3(feature, layer) {
+        bounds_group.addLayer(layer_Watercourses_5);
+        function pop_Roads_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(String(feature.properties['NAME']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SURFACE'] !== null ? autolinker.link(String(feature.properties['SURFACE']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['4WD?'] !== null ? autolinker.link(String(feature.properties['4WD?']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOTES'] !== null ? autolinker.link(String(feature.properties['NOTES']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Roads_6_0() {
+            return {
+                pane: 'pane_Roads_6',
+                opacity: 1,
+                color: 'rgba(157,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Roads_6');
+        map.getPane('pane_Roads_6').style.zIndex = 406;
+        map.getPane('pane_Roads_6').style['mix-blend-mode'] = 'normal';
+        var layer_Roads_6 = new L.geoJson(json_Roads_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Roads_6',
+            layerName: 'layer_Roads_6',
+            pane: 'pane_Roads_6',
+            onEachFeature: pop_Roads_6,
+            style: style_Roads_6_0,
+        });
+        bounds_group.addLayer(layer_Roads_6);
+        function pop_ProtectedWatersheds_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -364,7 +470,8 @@
                         <td colspan="2">' + (feature.properties['AREA_'] !== null ? autolinker.link(String(feature.properties['AREA_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MUNICIPALI'] !== null ? autolinker.link(String(feature.properties['MUNICIPALI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">MUNICIPALI</th>\
+                        <td class="visible-with-data" id="MUNICIPALI">' + (feature.properties['MUNICIPALI'] !== null ? autolinker.link(String(feature.properties['MUNICIPALI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['SECONDARY_'] !== null ? autolinker.link(String(feature.properties['SECONDARY_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -373,7 +480,8 @@
                         <td colspan="2">' + (feature.properties['PRIMARY_TR'] !== null ? autolinker.link(String(feature.properties['PRIMARY_TR']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['WATERSHED'] !== null ? autolinker.link(String(feature.properties['WATERSHED']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">WATERSHED</th>\
+                        <td class="visible-with-data" id="WATERSHED">' + (feature.properties['WATERSHED'] !== null ? autolinker.link(String(feature.properties['WATERSHED']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['SHAPE_AREA'] !== null ? autolinker.link(String(feature.properties['SHAPE_AREA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -389,9 +497,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_protected_watersheds_3_0() {
+        function style_ProtectedWatersheds_7_0() {
             return {
-                pane: 'pane_protected_watersheds_3',
+                pane: 'pane_ProtectedWatersheds_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -404,20 +512,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_protected_watersheds_3');
-        map.getPane('pane_protected_watersheds_3').style.zIndex = 403;
-        map.getPane('pane_protected_watersheds_3').style['mix-blend-mode'] = 'normal';
-        var layer_protected_watersheds_3 = new L.geoJson(json_protected_watersheds_3, {
+        map.createPane('pane_ProtectedWatersheds_7');
+        map.getPane('pane_ProtectedWatersheds_7').style.zIndex = 407;
+        map.getPane('pane_ProtectedWatersheds_7').style['mix-blend-mode'] = 'normal';
+        var layer_ProtectedWatersheds_7 = new L.geoJson(json_ProtectedWatersheds_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_protected_watersheds_3',
-            layerName: 'layer_protected_watersheds_3',
-            pane: 'pane_protected_watersheds_3',
-            onEachFeature: pop_protected_watersheds_3,
-            style: style_protected_watersheds_3_0,
+            dataVar: 'json_ProtectedWatersheds_7',
+            layerName: 'layer_ProtectedWatersheds_7',
+            pane: 'pane_ProtectedWatersheds_7',
+            onEachFeature: pop_ProtectedWatersheds_7,
+            style: style_ProtectedWatersheds_7_0,
         });
-        bounds_group.addLayer(layer_protected_watersheds_3);
-        function pop_nature_legacy_areas_4(feature, layer) {
+        bounds_group.addLayer(layer_ProtectedWatersheds_7);
+        function pop_NatureLegacyAreas_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -445,9 +553,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_nature_legacy_areas_4_0() {
+        function style_NatureLegacyAreas_8_0() {
             return {
-                pane: 'pane_nature_legacy_areas_4',
+                pane: 'pane_NatureLegacyAreas_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -460,20 +568,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_nature_legacy_areas_4');
-        map.getPane('pane_nature_legacy_areas_4').style.zIndex = 404;
-        map.getPane('pane_nature_legacy_areas_4').style['mix-blend-mode'] = 'normal';
-        var layer_nature_legacy_areas_4 = new L.geoJson(json_nature_legacy_areas_4, {
+        map.createPane('pane_NatureLegacyAreas_8');
+        map.getPane('pane_NatureLegacyAreas_8').style.zIndex = 408;
+        map.getPane('pane_NatureLegacyAreas_8').style['mix-blend-mode'] = 'normal';
+        var layer_NatureLegacyAreas_8 = new L.geoJson(json_NatureLegacyAreas_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_nature_legacy_areas_4',
-            layerName: 'layer_nature_legacy_areas_4',
-            pane: 'pane_nature_legacy_areas_4',
-            onEachFeature: pop_nature_legacy_areas_4,
-            style: style_nature_legacy_areas_4_0,
+            dataVar: 'json_NatureLegacyAreas_8',
+            layerName: 'layer_NatureLegacyAreas_8',
+            pane: 'pane_NatureLegacyAreas_8',
+            onEachFeature: pop_NatureLegacyAreas_8,
+            style: style_NatureLegacyAreas_8_0,
         });
-        bounds_group.addLayer(layer_nature_legacy_areas_4);
-        function pop_Protected_Natural_Areas_5(feature, layer) {
+        bounds_group.addLayer(layer_NatureLegacyAreas_8);
+        function pop_ProtectedNaturalAreas_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -482,7 +590,8 @@
                         <td colspan="2">' + (feature.properties['objectid'] !== null ? autolinker.link(String(feature.properties['objectid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(String(feature.properties['name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">name</th>\
+                        <td class="visible-with-data" id="name">' + (feature.properties['name'] !== null ? autolinker.link(String(feature.properties['name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['source'] !== null ? autolinker.link(String(feature.properties['source']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -500,7 +609,8 @@
                         <td colspan="2">' + (feature.properties['grp'] !== null ? autolinker.link(String(feature.properties['grp']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['hectares'] !== null ? autolinker.link(String(feature.properties['hectares']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">hectares</th>\
+                        <td class="visible-with-data" id="hectares">' + (feature.properties['hectares'] !== null ? autolinker.link(String(feature.properties['hectares']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['owner'] !== null ? autolinker.link(String(feature.properties['owner']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -534,9 +644,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Protected_Natural_Areas_5_0() {
+        function style_ProtectedNaturalAreas_9_0() {
             return {
-                pane: 'pane_Protected_Natural_Areas_5',
+                pane: 'pane_ProtectedNaturalAreas_9',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -549,189 +659,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Protected_Natural_Areas_5');
-        map.getPane('pane_Protected_Natural_Areas_5').style.zIndex = 405;
-        map.getPane('pane_Protected_Natural_Areas_5').style['mix-blend-mode'] = 'normal';
-        var layer_Protected_Natural_Areas_5 = new L.geoJson(json_Protected_Natural_Areas_5, {
+        map.createPane('pane_ProtectedNaturalAreas_9');
+        map.getPane('pane_ProtectedNaturalAreas_9').style.zIndex = 409;
+        map.getPane('pane_ProtectedNaturalAreas_9').style['mix-blend-mode'] = 'normal';
+        var layer_ProtectedNaturalAreas_9 = new L.geoJson(json_ProtectedNaturalAreas_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Protected_Natural_Areas_5',
-            layerName: 'layer_Protected_Natural_Areas_5',
-            pane: 'pane_Protected_Natural_Areas_5',
-            onEachFeature: pop_Protected_Natural_Areas_5,
-            style: style_Protected_Natural_Areas_5_0,
+            dataVar: 'json_ProtectedNaturalAreas_9',
+            layerName: 'layer_ProtectedNaturalAreas_9',
+            pane: 'pane_ProtectedNaturalAreas_9',
+            onEachFeature: pop_ProtectedNaturalAreas_9,
+            style: style_ProtectedNaturalAreas_9_0,
         });
-        bounds_group.addLayer(layer_Protected_Natural_Areas_5);
-        function pop_clear_cuts_6(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['age'] !== null ? autolinker.link(String(feature.properties['age']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_clear_cuts_6_0() {
-            return {
-                pane: 'pane_clear_cuts_6',
-                interactive: false,
-            }
-        }
-        function style_clear_cuts_6_1() {
-            return {
-                pane: 'pane_clear_cuts_6',
-                opacity: 1,
-                color: 'rgba(179,90,42,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fillOpacity: 0,
-                interactive: false,
-            }
-        }
-        map.createPane('pane_clear_cuts_6');
-        map.getPane('pane_clear_cuts_6').style.zIndex = 406;
-        map.getPane('pane_clear_cuts_6').style['mix-blend-mode'] = 'normal';
-        var layer_clear_cuts_6 = new L.geoJson.multiStyle(json_clear_cuts_6, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_clear_cuts_6',
-            layerName: 'layer_clear_cuts_6',
-            pane: 'pane_clear_cuts_6',
-            onEachFeature: pop_clear_cuts_6,
-            styles: [style_clear_cuts_6_0,style_clear_cuts_6_1,]
-        });
-        bounds_group.addLayer(layer_clear_cuts_6);
-        function pop_SML_WETLANDS_7(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id_0'] !== null ? autolinker.link(String(feature.properties['id_0']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wc'] !== null ? autolinker.link(String(feature.properties['wc']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wetland_cl'] !== null ? autolinker.link(String(feature.properties['wetland_cl']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['shape_leng'] !== null ? autolinker.link(String(feature.properties['shape_leng']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['shape_area'] !== null ? autolinker.link(String(feature.properties['shape_area']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['hectares'] !== null ? autolinker.link(String(feature.properties['hectares']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_SML_WETLANDS_7_0() {
-            return {
-                pane: 'pane_SML_WETLANDS_7',
-                stroke: false, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(163,205,185,1.0)',
-                interactive: false,
-            }
-        }
-        function style_SML_WETLANDS_7_1() {
-            return {
-                pane: 'pane_SML_WETLANDS_7',
-                interactive: false,
-            }
-        }
-        map.createPane('pane_SML_WETLANDS_7');
-        map.getPane('pane_SML_WETLANDS_7').style.zIndex = 407;
-        map.getPane('pane_SML_WETLANDS_7').style['mix-blend-mode'] = 'normal';
-        var layer_SML_WETLANDS_7 = new L.geoJson.multiStyle(json_SML_WETLANDS_7, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_SML_WETLANDS_7',
-            layerName: 'layer_SML_WETLANDS_7',
-            pane: 'pane_SML_WETLANDS_7',
-            onEachFeature: pop_SML_WETLANDS_7,
-            styles: [style_SML_WETLANDS_7_0,style_SML_WETLANDS_7_1,]
-        });
-        bounds_group.addLayer(layer_SML_WETLANDS_7);
-        function pop_SML_PLANNED_TRAILS_8(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">name</th>\
-                        <td class="visible-with-data" id="name">' + (feature.properties['name'] !== null ? autolinker.link(String(feature.properties['name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">difficulty</th>\
-                        <td class="visible-with-data" id="difficulty">' + (feature.properties['difficulty'] !== null ? autolinker.link(String(feature.properties['difficulty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">direction</th>\
-                        <td class="visible-with-data" id="direction">' + (feature.properties['direction'] !== null ? autolinker.link(String(feature.properties['direction']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">elevation_descent_meters</th>\
-                        <td class="visible-with-data" id="elevation_descent_meters">' + (feature.properties['elevation_descent_meters'] !== null ? autolinker.link(String(feature.properties['elevation_descent_meters']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">elevation_gain_meters</th>\
-                        <td class="visible-with-data" id="elevation_gain_meters">' + (feature.properties['elevation_gain_meters'] !== null ? autolinker.link(String(feature.properties['elevation_gain_meters']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">length_km</th>\
-                        <td class="visible-with-data" id="length_km">' + (feature.properties['length_km'] !== null ? autolinker.link(String(feature.properties['length_km']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_SML_PLANNED_TRAILS_8_0() {
-            return {
-                pane: 'pane_SML_PLANNED_TRAILS_8',
-                opacity: 1,
-                color: 'rgba(213,180,60,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_SML_PLANNED_TRAILS_8');
-        map.getPane('pane_SML_PLANNED_TRAILS_8').style.zIndex = 408;
-        map.getPane('pane_SML_PLANNED_TRAILS_8').style['mix-blend-mode'] = 'normal';
-        var layer_SML_PLANNED_TRAILS_8 = new L.geoJson(json_SML_PLANNED_TRAILS_8, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_SML_PLANNED_TRAILS_8',
-            layerName: 'layer_SML_PLANNED_TRAILS_8',
-            pane: 'pane_SML_PLANNED_TRAILS_8',
-            onEachFeature: pop_SML_PLANNED_TRAILS_8,
-            style: style_SML_PLANNED_TRAILS_8_0,
-        });
-        bounds_group.addLayer(layer_SML_PLANNED_TRAILS_8);
-        map.addLayer(layer_SML_PLANNED_TRAILS_8);
-        function pop_COASTAL_LINK_9(feature, layer) {
+        bounds_group.addLayer(layer_ProtectedNaturalAreas_9);
+        function pop_CoastalLinkTrail_10(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -798,9 +739,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_COASTAL_LINK_9_0() {
+        function style_CoastalLinkTrail_10_0() {
             return {
-                pane: 'pane_COASTAL_LINK_9',
+                pane: 'pane_CoastalLinkTrail_10',
                 opacity: 1,
                 color: 'rgba(152,125,183,1.0)',
                 dashArray: '',
@@ -808,22 +749,193 @@
                 lineJoin: 'bevel',
                 weight: 1.0,
                 fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CoastalLinkTrail_10');
+        map.getPane('pane_CoastalLinkTrail_10').style.zIndex = 410;
+        map.getPane('pane_CoastalLinkTrail_10').style['mix-blend-mode'] = 'normal';
+        var layer_CoastalLinkTrail_10 = new L.geoJson(json_CoastalLinkTrail_10, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CoastalLinkTrail_10',
+            layerName: 'layer_CoastalLinkTrail_10',
+            pane: 'pane_CoastalLinkTrail_10',
+            onEachFeature: pop_CoastalLinkTrail_10,
+            style: style_CoastalLinkTrail_10_0,
+        });
+        bounds_group.addLayer(layer_CoastalLinkTrail_10);
+        function pop_HarvestedForestAreas_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['age'] !== null ? autolinker.link(String(feature.properties['age']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_HarvestedForestAreas_11_0() {
+            return {
+                pane: 'pane_HarvestedForestAreas_11',
+                interactive: false,
+            }
+        }
+        function style_HarvestedForestAreas_11_1() {
+            return {
+                pane: 'pane_HarvestedForestAreas_11',
+                opacity: 1,
+                color: 'rgba(179,90,42,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_HarvestedForestAreas_11');
+        map.getPane('pane_HarvestedForestAreas_11').style.zIndex = 411;
+        map.getPane('pane_HarvestedForestAreas_11').style['mix-blend-mode'] = 'normal';
+        var layer_HarvestedForestAreas_11 = new L.geoJson.multiStyle(json_HarvestedForestAreas_11, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_HarvestedForestAreas_11',
+            layerName: 'layer_HarvestedForestAreas_11',
+            pane: 'pane_HarvestedForestAreas_11',
+            onEachFeature: pop_HarvestedForestAreas_11,
+            styles: [style_HarvestedForestAreas_11_0,style_HarvestedForestAreas_11_1,]
+        });
+        bounds_group.addLayer(layer_HarvestedForestAreas_11);
+        function pop_Wetlands_12(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id_0'] !== null ? autolinker.link(String(feature.properties['id_0']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['wc'] !== null ? autolinker.link(String(feature.properties['wc']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['wetland_cl'] !== null ? autolinker.link(String(feature.properties['wetland_cl']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_leng'] !== null ? autolinker.link(String(feature.properties['shape_leng']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">shape_area</th>\
+                        <td class="visible-with-data" id="shape_area">' + (feature.properties['shape_area'] !== null ? autolinker.link(String(feature.properties['shape_area']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">hectares</th>\
+                        <td class="visible-with-data" id="hectares">' + (feature.properties['hectares'] !== null ? autolinker.link(String(feature.properties['hectares']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Wetlands_12_0() {
+            return {
+                pane: 'pane_Wetlands_12',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(163,205,185,1.0)',
+                interactive: false,
+            }
+        }
+        function style_Wetlands_12_1() {
+            return {
+                pane: 'pane_Wetlands_12',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Wetlands_12');
+        map.getPane('pane_Wetlands_12').style.zIndex = 412;
+        map.getPane('pane_Wetlands_12').style['mix-blend-mode'] = 'normal';
+        var layer_Wetlands_12 = new L.geoJson.multiStyle(json_Wetlands_12, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Wetlands_12',
+            layerName: 'layer_Wetlands_12',
+            pane: 'pane_Wetlands_12',
+            onEachFeature: pop_Wetlands_12,
+            styles: [style_Wetlands_12_0,style_Wetlands_12_1,]
+        });
+        bounds_group.addLayer(layer_Wetlands_12);
+        function pop_PlannedTrails_13(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td class="visible-with-data" id="name">' + (feature.properties['name'] !== null ? autolinker.link(String(feature.properties['name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">difficulty</th>\
+                        <td class="visible-with-data" id="difficulty">' + (feature.properties['difficulty'] !== null ? autolinker.link(String(feature.properties['difficulty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">direction</th>\
+                        <td class="visible-with-data" id="direction">' + (feature.properties['direction'] !== null ? autolinker.link(String(feature.properties['direction']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">length_km</th>\
+                        <td class="visible-with-data" id="length_km">' + (feature.properties['length_km'] !== null ? autolinker.link(String(feature.properties['length_km']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">elevation_gain_meters</th>\
+                        <td class="visible-with-data" id="elevation_gain_meters">' + (feature.properties['elevation_gain_meters'] !== null ? autolinker.link(String(feature.properties['elevation_gain_meters']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">elevation_descent_meters</th>\
+                        <td class="visible-with-data" id="elevation_descent_meters">' + (feature.properties['elevation_descent_meters'] !== null ? autolinker.link(String(feature.properties['elevation_descent_meters']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_PlannedTrails_13_0() {
+            return {
+                pane: 'pane_PlannedTrails_13',
+                opacity: 1,
+                color: 'rgba(213,180,60,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_COASTAL_LINK_9');
-        map.getPane('pane_COASTAL_LINK_9').style.zIndex = 409;
-        map.getPane('pane_COASTAL_LINK_9').style['mix-blend-mode'] = 'normal';
-        var layer_COASTAL_LINK_9 = new L.geoJson(json_COASTAL_LINK_9, {
+        map.createPane('pane_PlannedTrails_13');
+        map.getPane('pane_PlannedTrails_13').style.zIndex = 413;
+        map.getPane('pane_PlannedTrails_13').style['mix-blend-mode'] = 'normal';
+        var layer_PlannedTrails_13 = new L.geoJson(json_PlannedTrails_13, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_COASTAL_LINK_9',
-            layerName: 'layer_COASTAL_LINK_9',
-            pane: 'pane_COASTAL_LINK_9',
-            onEachFeature: pop_COASTAL_LINK_9,
-            style: style_COASTAL_LINK_9_0,
+            dataVar: 'json_PlannedTrails_13',
+            layerName: 'layer_PlannedTrails_13',
+            pane: 'pane_PlannedTrails_13',
+            onEachFeature: pop_PlannedTrails_13,
+            style: style_PlannedTrails_13_0,
         });
-        bounds_group.addLayer(layer_COASTAL_LINK_9);
+        bounds_group.addLayer(layer_PlannedTrails_13);
+        map.addLayer(layer_PlannedTrails_13);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -835,21 +947,22 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: '<img src="legend/COASTAL_LINK_9.png" /> COASTAL_LINK', layer: layer_COASTAL_LINK_9},
-            {label: '<img src="legend/SML_PLANNED_TRAILS_8.png" /> SML_PLANNED_TRAILS', layer: layer_SML_PLANNED_TRAILS_8},
-            {label: '<img src="legend/SML_WETLANDS_7.png" /> SML_WETLANDS', layer: layer_SML_WETLANDS_7},
-            {label: '<img src="legend/clear_cuts_6.png" /> clear_cuts', layer: layer_clear_cuts_6},
+            {label: '<img src="legend/PlannedTrails_13.png" /> Planned Trails', layer: layer_PlannedTrails_13},
+            {label: '<img src="legend/Wetlands_12.png" /> Wetlands', layer: layer_Wetlands_12},
+            {label: '<img src="legend/HarvestedForestAreas_11.png" /> Harvested Forest Areas', layer: layer_HarvestedForestAreas_11},
+            {label: '<img src="legend/CoastalLinkTrail_10.png" /> Coastal Link Trail', layer: layer_CoastalLinkTrail_10},
         {label: '<b>Protected Areas</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/Protected_Natural_Areas_5.png" /> Protected_Natural_Areas', layer: layer_Protected_Natural_Areas_5},
-            {label: '<img src="legend/nature_legacy_areas_4.png" /> nature_legacy_areas', layer: layer_nature_legacy_areas_4},
-            {label: '<img src="legend/protected_watersheds_3.png" /> protected_watersheds', layer: layer_protected_watersheds_3},]},
-            {label: '<img src="legend/watercourses_2.png" /> watercourses', layer: layer_watercourses_2},
-            {label: '<img src="legend/CrownLandAOI_1.png" /> Crown Land AOI', layer: layer_CrownLandAOI_1},
+            {label: '<img src="legend/ProtectedNaturalAreas_9.png" /> Protected Natural Areas', layer: layer_ProtectedNaturalAreas_9},
+            {label: '<img src="legend/NatureLegacyAreas_8.png" /> Nature Legacy Areas', layer: layer_NatureLegacyAreas_8},
+            {label: '<img src="legend/ProtectedWatersheds_7.png" /> Protected Watersheds', layer: layer_ProtectedWatersheds_7},]},
+            {label: '<img src="legend/Roads_6.png" /> Roads', layer: layer_Roads_6},
+            {label: '<img src="legend/Watercourses_5.png" /> Watercourses', layer: layer_Watercourses_5},
+            {label: '<img src="legend/Geology_4.png" /> Geology', layer: layer_Geology_4},
+            {label: '<img src="legend/CrownLandAOI_3.png" /> Crown Land AOI', layer: layer_CrownLandAOI_3},
         {label: '<b>Basemaps</b>', selectAllCheckbox: true, children: [
-            {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid},
-            {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid},
-            {label: "ESRI Satellite", layer: layer_ESRISatellite},
-            {label: "ESRI Topo", layer: layer_ESRITopo_0},]},]
+            {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_2, radioGroup: 'bm' },
+            {label: "ESRI Topo", layer: layer_ESRITopo_1, radioGroup: 'bm' },
+            {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -862,27 +975,27 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_watercourses_2.eachLayer(function(layer) {
+        layer_Watercourses_5.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['name1'] !== null?String('<div style="color: #0091ca; font-size: 10pt; font-style: italic; font-family: \'Georgia\', sans-serif;">' + layer.feature.properties['name1']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_watercourses_2'});
+            layer.bindTooltip((layer.feature.properties['name1'] !== null?String('<div style="color: #0091ca; font-size: 10pt; font-style: italic; font-family: \'Georgia\', sans-serif;">' + layer.feature.properties['name1']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Watercourses_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_watercourses_2]);
+        resetLabels([layer_Watercourses_5]);
         map.on("zoomend", function(){
-            resetLabels([layer_watercourses_2]);
+            resetLabels([layer_Watercourses_5]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_watercourses_2]);
+            resetLabels([layer_Watercourses_5]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_watercourses_2]);
+            resetLabels([layer_Watercourses_5]);
         });
         </script>
     </body>
