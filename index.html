@@ -912,6 +912,9 @@
         function style_PlannedTrails_13_0(feature) {
             var color;
             switch(feature.properties['difficulty']) {
+                case 'ROAD':
+                    color = 'rgba(157, 0, 255, 1.0)';
+                    break;
                 case 'GREEN':
                     color = 'rgba(43, 176, 28, 1.0)';
                     break;
