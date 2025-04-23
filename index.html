@@ -163,6 +163,30 @@
         layer_OpenTopoMap_4;
 
         map.addLayer(layer_GoogleTerrainHybrid_0);  // Ensure Google Terrain Hybrid remains default
+
+        // Create custom P icon for trailhead
+        var trailheadIcon = L.divIcon({
+            className: 'trailhead-icon',
+            html: '<div style="color: black; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 20px;">P</div>',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+
+        // Create trailhead marker
+        var trailheadMarker = L.marker([45.229193, -66.469980], {
+            icon: trailheadIcon,
+            title: 'Trailhead'
+        });
+
+        var trailheadMarker2 = L.marker([45.191262, -66.457331], {
+            icon: trailheadIcon,
+            title: 'Trailhead'
+        });
+
+        // Create trailhead layer group
+        var layer_Trailhead = L.layerGroup([trailheadMarker, trailheadMarker2]);
+        layer_Trailhead.addTo(map); // Add to map by default
+
         function pop_CrownLandAOI_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1055,25 +1079,17 @@
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
-        var overlaysTree = [
-            {label: '<img src="legend/PlannedTrails_13.png" /> Planned Trails', layer: layer_PlannedTrails_13},
-            {label: '<img src="legend/Wetlands_12.png" /> Wetlands', layer: layer_Wetlands_12},
-            {label: '<img src="legend/HarvestedForestAreas_11.png" /> Harvested Forest Areas', layer: layer_HarvestedForestAreas_11},
-            {label: '<img src="legend/CoastalLinkTrail_10.png" /> Coastal Link Trail', layer: layer_CoastalLinkTrail_10},
-        {label: '<b>Protected Areas</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/ProtectedNaturalAreas_9.png" /> Protected Natural Areas', layer: layer_ProtectedNaturalAreas_9},
-            {label: '<img src="legend/NatureLegacyAreas_8.png" /> Nature Legacy Areas', layer: layer_NatureLegacyAreas_8},
-            {label: '<img src="legend/ProtectedWatersheds_7.png" /> Protected Watersheds', layer: layer_ProtectedWatersheds_7},]},
-            {label: '<img src="legend/Roads_6.png" /> Roads', layer: layer_Roads_6},
-            {label: '<img src="legend/Watercourses_5.png" /> Watercourses', layer: layer_Watercourses_5},
-            {label: '<img src="legend/Geology_4.png" /> Geology', layer: layer_Geology_4},
-            {label: '<img src="legend/CrownLandAOI_3.png" /> Crown Land AOI', layer: layer_CrownLandAOI_3},
-        {label: '<b>Basemaps</b>', selectAllCheckbox: true, children: [
-            {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_2, radioGroup: 'bm' },
-            {label: "ESRI Satellite", layer: layer_ESRISatellite_3, radioGroup: 'bm' },
-            {label: "ESRI Topo", layer: layer_ESRITopo_1, radioGroup: 'bm' },
-            {label: "OpenTopoMap", layer: layer_OpenTopoMap_4, radioGroup: 'bm' },
-            {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},]
+        var overlaysTree = {
+            label: 'Layers',
+            selectAllCheckbox: true,
+            children: [
+                {label: "Crown Land AOI", layer: layer_CrownLandAOI_3},
+                {label: "Protected Areas", layer: layer_ProtectedAreas_5},
+                {label: "Bedrock Geology", layer: layer_BedrockGeology_6},
+                {label: "Planned Trails", layer: layer_PlannedTrails_13},
+                {label: "Trailhead", layer: layer_Trailhead},
+            ]
+        };
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
