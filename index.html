@@ -104,6 +104,32 @@
             minNativeZoom: 0,
             maxNativeZoom: 18
         });
+
+        // Add Google Terrain Hybrid basemap
+        var layer_GoogleTerrainHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: 'Google Maps',
+            minZoom: 1,
+            maxZoom: 28
+        });
+
+        // Add Google Satellite Hybrid basemap
+        var layer_GoogleSatelliteHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: 'Google Maps',
+            minZoom: 1,
+            maxZoom: 28
+        });
+
+        // Add ESRI Satellite basemap
+        var layer_ESRISatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'ESRI',
+            minZoom: 1,
+            maxZoom: 28
+        });
+
+        // Set Google Terrain Hybrid as default basemap
+        layer_GoogleTerrainHybrid.addTo(map);
         layer_ESRITopo_0;
         map.addLayer(layer_ESRITopo_0);
         function pop_CrownLandAOI_1(feature, layer) {
@@ -816,6 +842,9 @@
             {label: '<img src="legend/watercourses_2.png" /> watercourses', layer: layer_watercourses_2},
             {label: '<img src="legend/CrownLandAOI_1.png" /> Crown Land AOI', layer: layer_CrownLandAOI_1},
         {label: '<b>Basemaps</b>', selectAllCheckbox: true, children: [
+            {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid},
+            {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid},
+            {label: "ESRI Satellite", layer: layer_ESRISatellite},
             {label: "ESRI Topo", layer: layer_ESRITopo_0},]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
