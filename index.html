@@ -953,11 +953,11 @@
                     </tr>\
                     <tr>\
                         <th scope="row">elevation_gain_meters</th>\
-                        <td class="visible-with-data" id="elevation_gain_meters">' + (feature.properties['elevation_gain_meters'] !== null ? autolinker.link(String(feature.properties['elevation_gain_meters']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="elevation_gain_meters">' + (feature.properties['elevation_gain_meters'] !== null ? autolinker.link(String(Math.round(feature.properties['elevation_gain_meters'])).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">elevation_descent_meters</th>\
-                        <td class="visible-with-data" id="elevation_descent_meters">' + (feature.properties['elevation_descent_meters'] !== null ? autolinker.link(String(feature.properties['elevation_descent_meters']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="elevation_descent_meters">' + (feature.properties['elevation_descent_meters'] !== null ? autolinker.link(String(Math.round(feature.properties['elevation_descent_meters'])).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
