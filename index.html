@@ -238,102 +238,65 @@
         }
 
         function style_geology(feature) {
-            // Get the rock type code from the last 2 characters of the ROCK_TYPE_C field
-            const rockType = feature.properties.ROCK_TYPE_C ? feature.properties.ROCK_TYPE_C.slice(-2) : '';
+            var color;
+            var nb_code = feature.properties['nb_code'];
             
-            // Base style object
-            let style = {
-                weight: 1,
-                opacity: 1,
-                color: 'rgba(0,0,0,0.5)',
-                fillOpacity: 0.5
-            };
-
-            // Color schemes based on rock types
-            switch(rockType) {
-                // Igneous Rocks - Felsic
-                case 'fi':
-                    style.fillColor = '#FF4D4D';  // Bright red for felsic intrusive
-                    break;
-                case 'fv':
-                    style.fillColor = '#FF6B6B';  // Lighter red for felsic volcanic
-                    style.dashArray = '3';
-                    break;
-                    
-                // Igneous Rocks - Intermediate
-                case 'ii':
-                    style.fillColor = '#FF8533';  // Orange for intermediate intrusive
-                    break;
-                case 'iv':
-                    style.fillColor = '#FFA366';  // Lighter orange for intermediate volcanic
-                    style.dashArray = '3';
-                    break;
-                    
-                // Igneous Rocks - Mafic
-                case 'mi':
-                    style.fillColor = '#336600';  // Dark green for mafic intrusive
-                    break;
-                case 'mv':
-                    style.fillColor = '#5CD65C';  // Lighter green for mafic volcanic
-                    style.dashArray = '3';
-                    break;
-                    
-                // Igneous Rocks - Peralkaline
-                case 'pi':
-                    style.fillColor = '#FF99FF';  // Pink for peralkaline
-                    break;
-                    
-                // Sedimentary Rocks
-                case 'cc':
-                    style.fillColor = '#FFE5CC';  // Light orange for coarse clastic
-                    style.dashArray = '2 2';
-                    break;
-                case 'mc':
-                    style.fillColor = '#FFCC99';  // Medium orange for medium clastic
-                    style.dashArray = '2 2';
-                    break;
-                case 'fc':
-                    style.fillColor = '#FFB366';  // Darker orange for fine clastic
-                    style.dashArray = '2 2';
-                    break;
-                case 'ls':
-                    style.fillColor = '#99CCFF';  // Light blue for limestone
-                    style.dashArray = '1 3';
-                    break;
-                case 'ca':
-                    style.fillColor = '#66B2FF';  // Medium blue for calcareous rocks
-                    style.dashArray = '1 3';
-                    break;
-                case 'e':
-                    style.fillColor = '#E6E6FF';  // Very light blue for evaporites
-                    style.dashArray = '4 2';
-                    break;
-                    
-                // Metamorphic and Mixed Rocks
-                case 'mm':
-                    style.fillColor = '#CC99FF';  // Purple for metamorphic
-                    style.dashArray = '3 2';
-                    break;
-                case 'gn':
-                    style.fillColor = '#B266FF';  // Darker purple for gneiss
-                    style.dashArray = '3 2';
-                    break;
-                case 'ch':
-                    style.fillColor = '#9933FF';  // Even darker purple for schist
-                    style.dashArray = '3 2';
-                    break;
-                case 'vs':
-                    style.fillColor = '#CCCC00';  // Yellow for mixed volcanic/sedimentary
-                    style.dashArray = '4 2';
-                    break;
-                    
-                // Default case
-                default:
-                    style.fillColor = '#CCCCCC';  // Grey for unknown
-                    break;
+            // Determine base color based on rock type
+            if (nb_code) {
+                if (nb_code.includes('fi')) { // felsic intrusive rocks (granite)
+                    color = '#FF4D4D'; // bright red
+                } else if (nb_code.includes('ii')) { // intermediate intrusive rocks (diorite)
+                    color = '#FF8533'; // orange
+                } else if (nb_code.includes('mi')) { // mafic intrusive rocks (gabbro)
+                    color = '#336600'; // dark green
+                } else if (nb_code.includes('mv')) { // mafic flows (basalt)
+                    color = '#5CD65C'; // lighter green
+                } else if (nb_code.includes('fv')) { // felsic flows (rhyolite)
+                    color = '#FF6B6B'; // lighter red
+                } else if (nb_code.includes('iv')) { // intermediate volcanic
+                    color = '#FFA366'; // lighter orange
+                } else if (nb_code.includes('pi')) { // peralkaline
+                    color = '#FF99FF'; // pink
+                } else if (nb_code.includes('cc')) { // coarse clastic
+                    color = '#FFE5CC'; // light orange
+                } else if (nb_code.includes('mc')) { // medium clastic
+                    color = '#FFCC99'; // medium orange
+                } else if (nb_code.includes('fc')) { // fine clastic
+                    color = '#FFB366'; // darker orange
+                } else if (nb_code.includes('ls')) { // limestone
+                    color = '#99CCFF'; // light blue
+                } else if (nb_code.includes('ca')) { // calcareous rocks
+                    color = '#66B2FF'; // medium blue
+                } else if (nb_code.includes('e')) { // evaporites
+                    color = '#E6E6FF'; // very light blue
+                } else if (nb_code.includes('mm')) { // metamorphic
+                    color = '#CC99FF'; // purple
+                } else if (nb_code.includes('gn')) { // gneiss
+                    color = '#B266FF'; // darker purple
+                } else if (nb_code.includes('ch')) { // schist
+                    color = '#9933FF'; // even darker purple
+                } else if (nb_code.includes('vs')) { // mixed volcanic/sedimentary
+                    color = '#CCCC00'; // yellow
+                } else {
+                    color = '#CCCCCC'; // grey for unknown
+                }
+            } else {
+                color = '#CCCCCC'; // grey for unknown
             }
-            
-            return style;
+
+            return {
+                pane: 'pane_Geology_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.5)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: color,
+                interactive: true
+            };
         }
         map.createPane('pane_Geology_4');
         map.getPane('pane_Geology_4').style.zIndex = 404;
