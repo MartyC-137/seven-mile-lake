@@ -144,6 +144,19 @@
             maxNativeZoom: 18
         });
         layer_ESRISatellite_3;
+        map.createPane('pane_OpenTopoMap_4');
+        map.getPane('pane_OpenTopoMap_4').style.zIndex = 404;
+        var layer_OpenTopoMap_4 = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OpenTopoMap_4',
+            opacity: 1.0,
+            attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 17
+        });
+        layer_OpenTopoMap_4;
+        map.addLayer(layer_OpenTopoMap_4);
         function pop_CrownLandAOI_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1053,6 +1066,7 @@
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_2, radioGroup: 'bm' },
             {label: "ESRI Satellite", layer: layer_ESRISatellite_3, radioGroup: 'bm' },
             {label: "ESRI Topo", layer: layer_ESRITopo_1, radioGroup: 'bm' },
+            {label: "OpenTopoMap", layer: layer_OpenTopoMap_4, radioGroup: 'bm' },
             {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
