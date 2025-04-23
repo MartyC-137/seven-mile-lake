@@ -908,26 +908,11 @@
             return {
                 pane: 'pane_PlannedTrails_13',
                 opacity: 1,
-                color: function(feature) {
-                    switch(feature.properties['DIFFICULTY']) {
-                        case 'ROAD':
-                            return 'rgba(157, 0, 255, 1.0)';
-                        case 'GREEN':
-                            return 'rgba(43, 176, 28, 1.0)';
-                        case 'BLUE':
-                            return 'rgba(17, 93, 191, 1.0)';
-                        case 'BLACK':
-                            return 'rgba(0, 0, 0, 1.0)';
-                        case 'DOUBLE BLACK':
-                            return 'rgba(230, 25, 25, 1.0)';
-                        default:
-                            return 'rgba(213,180,60,1.0)';
-                    }
-                },
+                color: 'rgba(213,180,60,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 3.0,
+                weight: 4.0,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -945,6 +930,7 @@
             style: style_PlannedTrails_13_0,
         });
         bounds_group.addLayer(layer_PlannedTrails_13);
+        map.addLayer(layer_PlannedTrails_13);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
