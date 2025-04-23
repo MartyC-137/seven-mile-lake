@@ -909,21 +909,38 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_PlannedTrails_13_0() {
+        function style_PlannedTrails_13_0(feature) {
+            var color;
+            switch(feature.properties['difficulty']) {
+                case 'GREEN':
+                    color = 'rgba(43, 176, 28, 1.0)';
+                    break;
+                case 'BLUE':
+                    color = 'rgba(17, 93, 191, 1.0)';
+                    break;
+                case 'BLACK':
+                    color = 'rgba(0, 0, 0, 1.0)';
+                    break;
+                case 'DOUBLE BLACK':
+                    color = 'rgba(230, 25, 25, 1.0)';
+                    break;
+                default:
+                    color = 'rgba(213,180,60,1.0)'; // default color if difficulty is not specified
+            }
             return {
                 pane: 'pane_PlannedTrails_13',
                 opacity: 1,
-                color: 'rgba(213,180,60,1.0)',
+                color: color,
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 4.0,
+                weight: 3.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
         map.createPane('pane_PlannedTrails_13');
-        map.getPane('pane_PlannedTrails_13').style.zIndex = 413;
+        map.getPane('pane_PlannedTrails_13').style.zIndex = 409;
         map.getPane('pane_PlannedTrails_13').style['mix-blend-mode'] = 'normal';
         var layer_PlannedTrails_13 = new L.geoJson(json_PlannedTrails_13, {
             attribution: '',
