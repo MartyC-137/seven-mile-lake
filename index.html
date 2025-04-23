@@ -132,6 +132,18 @@
             maxNativeZoom: 19
         });
         layer_GoogleSatelliteHybrid_2;
+        map.createPane('pane_ESRISatellite_3');
+        map.getPane('pane_ESRISatellite_3').style.zIndex = 403;
+        var layer_ESRISatellite_3 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRISatellite_3',
+            opacity: 1.0,
+            attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_ESRISatellite_3;
         function pop_CrownLandAOI_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1039,6 +1051,7 @@
             {label: '<img src="legend/CrownLandAOI_3.png" /> Crown Land AOI', layer: layer_CrownLandAOI_3},
         {label: '<b>Basemaps</b>', selectAllCheckbox: true, children: [
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_2, radioGroup: 'bm' },
+            {label: "ESRI Satellite", layer: layer_ESRISatellite_3, radioGroup: 'bm' },
             {label: "ESRI Topo", layer: layer_ESRITopo_1, radioGroup: 'bm' },
             {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
