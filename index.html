@@ -156,7 +156,19 @@
             maxNativeZoom: 17
         });
         layer_OpenTopoMap_4;
-        map.addLayer(layer_OpenTopoMap_4);
+        map.createPane('pane_StamenTerrain_5');
+        map.getPane('pane_StamenTerrain_5').style.zIndex = 405;
+        var layer_StamenTerrain_5 = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
+            pane: 'pane_StamenTerrain_5',
+            opacity: 1.0,
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_StamenTerrain_5;
+        map.addLayer(layer_GoogleTerrainHybrid_0);  // Set Google Terrain Hybrid as default
         function pop_CrownLandAOI_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1067,6 +1079,7 @@
             {label: "ESRI Satellite", layer: layer_ESRISatellite_3, radioGroup: 'bm' },
             {label: "ESRI Topo", layer: layer_ESRITopo_1, radioGroup: 'bm' },
             {label: "OpenTopoMap", layer: layer_OpenTopoMap_4, radioGroup: 'bm' },
+            {label: "Stamen Terrain", layer: layer_StamenTerrain_5, radioGroup: 'bm' },
             {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
