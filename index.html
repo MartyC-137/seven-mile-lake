@@ -162,32 +162,6 @@
         });
         layer_OpenTopoMap_4;
 
-        map.createPane('pane_OSMHiking_5');
-        map.getPane('pane_OSMHiking_5').style.zIndex = 405;
-        var layer_OSMHiking_5 = L.tileLayer('https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png', {
-            pane: 'pane_OSMHiking_5',
-            opacity: 1.0,
-            attribution: '&copy; <a href="https://waymarkedtrails.org">Waymarked Trails</a>',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 18
-        });
-        layer_OSMHiking_5;
-
-        map.createPane('pane_USGSTopo_6');
-        map.getPane('pane_USGSTopo_6').style.zIndex = 406;
-        var layer_USGSTopo_6 = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}', {
-            pane: 'pane_USGSTopo_6',
-            opacity: 1.0,
-            attribution: 'USGS The National Map',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 16
-        });
-        layer_USGSTopo_6;
-
         map.addLayer(layer_GoogleTerrainHybrid_0);  // Ensure Google Terrain Hybrid remains default
         function pop_CrownLandAOI_3(feature, layer) {
             var popupContent = '<table>\
@@ -1099,8 +1073,6 @@
             {label: "ESRI Satellite", layer: layer_ESRISatellite_3, radioGroup: 'bm' },
             {label: "ESRI Topo", layer: layer_ESRITopo_1, radioGroup: 'bm' },
             {label: "OpenTopoMap", layer: layer_OpenTopoMap_4, radioGroup: 'bm' },
-            {label: "OSM Hiking", layer: layer_OSMHiking_5, radioGroup: 'bm' },
-            {label: "USGS Topo", layer: layer_USGSTopo_6, radioGroup: 'bm' },
             {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
