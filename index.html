@@ -28,6 +28,24 @@
             font-weight: bold;
             color: #333;
         }
+        .map-logos {
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .map-logos img {
+            height: 70px;
+            width: auto;
+        }
         </style>
         <title>Seven Mile Lake Trail Network</title>
       <link rel="stylesheet" crossorigin href="/assets/index-rQXI03Pn.css">
@@ -35,6 +53,10 @@
     <body>
         <div id="map">
             <div class="map-title">Seven Mile Lake Trail Network</div>
+            <div class="map-logos">
+                <img src="/assets/SJC_Logo-DpiUhOrT.png" alt="Saint John City Logo">
+                <img src="/assets/SJTR_transparent-DYI6DC0j.png" alt="Saint John Trail Runners Logo">
+            </div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
