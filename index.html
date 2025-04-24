@@ -385,11 +385,11 @@
             title: 'East Eagle Mountain'
         });
 
-        // Add tooltips with images (desktop only)
-        var raggedFallsTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Ragged Falls</h4><img src="assets/ragged_falls.png" alt="Ragged Falls" style="max-width: 400px; max-height: 300px;"></div>';
-        var squawMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Squaw Mountain</h4><img src="assets/squaw_mtn.png" alt="Squaw Mountain" style="max-width: 400px; max-height: 300px;"></div>';
-        var eagleMtnCliffTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Eagle Mountain Cliff</h4><img src="assets/eagle_mtn_cliff.png" alt="Eagle Mountain Cliff" style="max-width: 400px; max-height: 300px;"></div>';
-        var eastEagleMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">East Eagle Mountain</h4><img src="assets/east_eagle_mtn.png" alt="East Eagle Mountain" style="max-width: 400px; max-height: 300px;"></div>';
+        // Add tooltips with images (desktop and mobile)
+        var raggedFallsTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Ragged Falls</h4><img src="assets/ragged_falls.png" alt="Ragged Falls" class="poi-image"></div>';
+        var squawMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Squaw Mountain</h4><img src="assets/squaw_mtn.png" alt="Squaw Mountain" class="poi-image"></div>';
+        var eagleMtnCliffTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Eagle Mountain Cliff</h4><img src="assets/eagle_mtn_cliff.png" alt="Eagle Mountain Cliff" class="poi-image"></div>';
+        var eastEagleMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">East Eagle Mountain</h4><img src="assets/east_eagle_mtn.png" alt="East Eagle Mountain" class="poi-image"></div>';
 
         raggedFallsMarker.bindTooltip(raggedFallsTooltipContent, {
             permanent: false,
@@ -430,23 +430,37 @@
         var style = document.createElement('style');
         style.textContent = `
             .poi-tooltip-container {
-                background: white;
+                background: rgb(255, 255, 255) !important;
                 border: 1px solid #ddd;
                 box-shadow: 0 0 15px rgba(0,0,0,0.2);
                 border-radius: 8px;
+                opacity: 1 !important;
             }
             .poi-tooltip {
-                background: white;
+                background: rgb(255, 255, 255) !important;
                 padding: 8px;
                 border-radius: 8px;
+                opacity: 1 !important;
             }
             .poi-tooltip img {
                 border-radius: 4px;
                 display: block;
+                opacity: 1 !important;
             }
             @media (max-width: 768px) {
                 .poi-tooltip-container {
-                    display: none;
+                    display: block;
+                    max-width: 200px;
+                }
+                .poi-image {
+                    max-width: 180px;
+                    height: auto;
+                }
+            }
+            @media (min-width: 769px) {
+                .poi-image {
+                    max-width: 400px;
+                    max-height: 300px;
                 }
             }
         `;
