@@ -16,7 +16,7 @@
         .map-title {
             position: absolute;
             top: 10px;
-            left: 11%;
+            left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             background-color: rgba(255, 255, 255, 0.9);
@@ -31,11 +31,9 @@
         .map-logos {
             position: absolute;
             top: 50px;
-            left: 10%;
+            left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            /* background-color: rgba(255, 255, 255, 0.9); */
-            /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
             padding: 5px 15px;
             border-radius: 5px;
             display: flex;
@@ -50,6 +48,26 @@
         .info.legend img {
             width: 30px;
             height: auto;
+        }
+        /* Trail difficulty legend styling */
+        .trail-legend {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        .trail-legend h4 {
+            margin: 0 0 5px 0;
+        }
+        .trail-legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
         }
         </style>
         <title>Seven Mile Lake Trail Network</title>
@@ -99,6 +117,20 @@
             imperial: false,  // Show only metric units
             position: 'bottomleft'
         }).addTo(map);
+
+        // Add trail difficulty legend
+        var trailLegend = L.control({position: "bottomright"});
+        trailLegend.onAdd = function(map) {
+            var div = L.DomUtil.create("div", "trail-legend");
+            div.innerHTML = '<h4>Trail Difficulty</h4>' +
+                '<div><i style="background: rgba(128, 89, 132, 1.0)"></i> Road</div>' +
+                '<div><i style="background: rgba(43, 176, 28, 1.0)"></i> Green - Easy</div>' +
+                '<div><i style="background: rgba(17, 93, 191, 1.0)"></i> Blue - Intermediate</div>' +
+                '<div><i style="background: rgba(0, 0, 0, 1.0)"></i> Black - Advanced</div>' +
+                '<div><i style="background: rgba(230, 25, 25, 1.0)"></i> Double Black - Expert</div>';
+            return div;
+        }
+        trailLegend.addTo(map);
 
         // Add north arrow
         var north = L.control({position: "bottomright"});
