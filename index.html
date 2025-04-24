@@ -16,7 +16,7 @@
         .map-title {
             position: absolute;
             top: 10px;
-            left: 10%;
+            left: 11%;
             transform: translateX(-50%);
             z-index: 1000;
             background-color: rgba(255, 255, 255, 0.9);
@@ -34,10 +34,10 @@
             left: 10%;
             transform: translateX(-50%);
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.9);
+            /* background-color: rgba(255, 255, 255, 0.9); */
+            /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
             padding: 5px 15px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
             display: flex;
             gap: 15px;
             align-items: center;
@@ -88,6 +88,13 @@
         }).fitBounds([[45.282248481731685,-66.55339000606446],[45.32300544427646,-66.45712931671133]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        
+        // Add scale bar
+        L.control.scale({
+            imperial: false,  // Show only metric units
+            position: 'bottomleft'
+        }).addTo(map);
+
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
