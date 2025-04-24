@@ -30,8 +30,8 @@
         }
         .map-logos {
             position: absolute;
-            top: 70px;
-            left: 50%;
+            top: 10px;
+            left: 80%;
             transform: translateX(-50%);
             z-index: 1000;
             padding: 5px 15px;
@@ -41,7 +41,7 @@
             align-items: center;
         }
         .map-logos img {
-            height: 70px;
+            height: 50px;
             width: auto;
         }
         /* North arrow styling */
@@ -124,10 +124,8 @@
             var div = L.DomUtil.create("div", "trail-legend");
             div.innerHTML = '<h4>Trail Difficulty</h4>' +
                 '<div><i style="background: rgba(128, 89, 132, 1.0)"></i> Road</div>' +
-                '<div><i style="background: rgba(43, 176, 28, 1.0)"></i> Green - Easy</div>' +
                 '<div><i style="background: rgba(17, 93, 191, 1.0)"></i> Blue - Intermediate</div>' +
-                '<div><i style="background: rgba(0, 0, 0, 1.0)"></i> Black - Advanced</div>' +
-                '<div><i style="background: rgba(230, 25, 25, 1.0)"></i> Double Black - Expert</div>';
+                '<div><i style="background: rgba(0, 0, 0, 1.0)"></i> Black - Advanced</div>';
             return div;
         }
         trailLegend.addTo(map);
