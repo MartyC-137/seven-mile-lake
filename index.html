@@ -162,6 +162,19 @@
         });
         layer_OpenTopoMap_4;
 
+        // Add Contours layer
+        map.createPane('pane_Contours');
+        map.getPane('pane_Contours').style.zIndex = 450;
+        var layer_Contours = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_terrain_lines/{z}/{x}/{y}{r}.png', {
+            pane: 'pane_Contours',
+            opacity: 0.7,
+            attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/about/" target="_blank">OpenStreetMap contributors</a>',
+            minZoom: 1,
+            maxZoom: 20,
+            minNativeZoom: 0,
+            maxNativeZoom: 14
+        });
+
         map.addLayer(layer_GoogleTerrainHybrid_0);  // Ensure Google Terrain Hybrid remains default
 
         // Create custom P icon for trailhead
@@ -1085,6 +1098,7 @@
             {label: '<img src="legend/HarvestedForestAreas_11.png" /> Harvested Forest Areas', layer: layer_HarvestedForestAreas_11},
             {label: '<img src="legend/CoastalLinkTrail_10.png" /> Coastal Link Trail', layer: layer_CoastalLinkTrail_10},
             {label: "Trailhead", layer: layer_Trailhead},
+            {label: "Contours", layer: layer_Contours},
             {label: '<b>Protected Areas</b>', selectAllCheckbox: true, children: [
                 {label: '<img src="legend/ProtectedNaturalAreas_9.png" /> Protected Natural Areas', layer: layer_ProtectedNaturalAreas_9},
                 {label: '<img src="legend/NatureLegacyAreas_8.png" /> Nature Legacy Areas', layer: layer_NatureLegacyAreas_8},
