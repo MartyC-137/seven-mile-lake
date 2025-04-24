@@ -172,8 +172,10 @@
             var div = L.DomUtil.create("div", "trail-legend");
             div.innerHTML = '<h4>Trail Difficulty</h4>' +
                 '<div><i style="background: rgba(128, 89, 132, 1.0)"></i> Road</div>' +
+                '<div><i style="background: rgba(43, 176, 28, 1.0)"></i> Green - Easy</div>' +
                 '<div><i style="background: rgba(17, 93, 191, 1.0)"></i> Blue - Intermediate</div>' +
-                '<div><i style="background: rgba(0, 0, 0, 1.0)"></i> Black - Advanced</div>';
+                '<div><i style="background: rgba(0, 0, 0, 1.0)"></i> Black - Advanced</div>' +
+                '<div><i style="background: rgba(230, 25, 25, 1.0)"></i> Double Black - Expert</div>';
             return div;
         }
         trailLegend.addTo(map);
@@ -342,6 +344,108 @@
         // Create trailhead layer group
         var layer_Trailhead = L.layerGroup([trailheadMarker, trailheadMarker2]);
         layer_Trailhead.addTo(map); // Add to map by default
+
+        // Create Points of Interest layer
+        var layer_PointsOfInterest = L.layerGroup();
+        
+        // Create custom icon for POIs
+        var poiIcon = L.divIcon({
+            className: 'poi-icon',
+            html: '<div style="background-color: #4a90e2; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 4px rgba(0,0,0,0.3);"></div>',
+            iconSize: [12, 12],
+            iconAnchor: [6, 6]
+        });
+
+        // Add Ragged Falls marker
+        var raggedFallsMarker = L.marker([45.231754, -66.473487], {
+            icon: poiIcon,
+            title: 'Ragged Falls'
+        });
+
+        // Add Squaw Mountain marker
+        var squawMtnMarker = L.marker([45.261000, -66.498195], {
+            icon: poiIcon,
+            title: 'Squaw Mountain'
+        });
+
+        // Add Eagle Mountain Cliff marker
+        var eagleMtnCliffMarker = L.marker([45.281973, -66.484336], {
+            icon: poiIcon,
+            title: 'Eagle Mountain Cliff'
+        });
+
+        // Add East Eagle Mountain marker
+        var eastEagleMtnMarker = L.marker([45.288626, -66.465331], {
+            icon: poiIcon,
+            title: 'East Eagle Mountain'
+        });
+
+        // Add tooltips with images (desktop only)
+        var raggedFallsTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Ragged Falls</h4><img src="assets/ragged_falls.png" alt="Ragged Falls" style="max-width: 400px; max-height: 300px;"></div>';
+        var squawMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Squaw Mountain</h4><img src="assets/squaw_mtn.png" alt="Squaw Mountain" style="max-width: 400px; max-height: 300px;"></div>';
+        var eagleMtnCliffTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Eagle Mountain Cliff</h4><img src="assets/eagle_mtn_cliff.png" alt="Eagle Mountain Cliff" style="max-width: 400px; max-height: 300px;"></div>';
+        var eastEagleMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">East Eagle Mountain</h4><img src="assets/east_eagle_mtn.png" alt="East Eagle Mountain" style="max-width: 400px; max-height: 300px;"></div>';
+
+        raggedFallsMarker.bindTooltip(raggedFallsTooltipContent, {
+            permanent: false,
+            direction: 'right',
+            className: 'poi-tooltip-container',
+            interactive: true
+        });
+
+        squawMtnMarker.bindTooltip(squawMtnTooltipContent, {
+            permanent: false,
+            direction: 'right',
+            className: 'poi-tooltip-container',
+            interactive: true
+        });
+
+        eagleMtnCliffMarker.bindTooltip(eagleMtnCliffTooltipContent, {
+            permanent: false,
+            direction: 'right',
+            className: 'poi-tooltip-container',
+            interactive: true
+        });
+
+        eastEagleMtnMarker.bindTooltip(eastEagleMtnTooltipContent, {
+            permanent: false,
+            direction: 'right',
+            className: 'poi-tooltip-container',
+            interactive: true
+        });
+
+        // Add markers to layer
+        layer_PointsOfInterest.addLayer(raggedFallsMarker);
+        layer_PointsOfInterest.addLayer(squawMtnMarker);
+        layer_PointsOfInterest.addLayer(eagleMtnCliffMarker);
+        layer_PointsOfInterest.addLayer(eastEagleMtnMarker);
+        layer_PointsOfInterest.addTo(map); // Add to map by default
+
+        // Add CSS for tooltip
+        var style = document.createElement('style');
+        style.textContent = `
+            .poi-tooltip-container {
+                background: white;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 8px;
+            }
+            .poi-tooltip {
+                background: white;
+                padding: 8px;
+                border-radius: 8px;
+            }
+            .poi-tooltip img {
+                border-radius: 4px;
+                display: block;
+            }
+            @media (max-width: 768px) {
+                .poi-tooltip-container {
+                    display: none;
+                }
+            }
+        `;
+        document.head.appendChild(style);
 
         function pop_CrownLandAOI_3(feature, layer) {
             var popupContent = '<table>\
@@ -1241,6 +1345,7 @@
             {label: '<img src="legend/HarvestedForestAreas_11.png" /> Harvested Forest Areas', layer: layer_HarvestedForestAreas_11},
             {label: '<img src="legend/CoastalLinkTrail_10.png" /> Coastal Link Trail', layer: layer_CoastalLinkTrail_10},
             {label: "Trailhead", layer: layer_Trailhead},
+            {label: "Points of Interest", layer: layer_PointsOfInterest},
             {label: "Contours", layer: layer_Contours},
             {label: '<b>Protected Areas</b>', selectAllCheckbox: true, children: [
                 {label: '<img src="legend/ProtectedNaturalAreas_9.png" /> Protected Natural Areas', layer: layer_ProtectedNaturalAreas_9},
