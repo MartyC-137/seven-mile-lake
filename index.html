@@ -19,11 +19,27 @@
             padding: 0;
             margin: 0;
         }
+        .map-title {
+            position: absolute;
+            top: 10px;
+            left: 10%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
         </style>
-        <title></title>
+        <title>Seven Mile Lake Trail Network</title>
     </head>
     <body>
         <div id="map">
+            <div class="map-title">Seven Mile Lake Trail Network</div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
@@ -161,6 +177,17 @@
             maxNativeZoom: 17
         });
         layer_OpenTopoMap_4;
+
+        // Add Stadia Alidade Satellite basemap
+        map.createPane('pane_StadiaAlidadeSatellite');
+        map.getPane('pane_StadiaAlidadeSatellite').style.zIndex = 405;
+        var Stadia_AlidadeSatellite = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}', {
+            minZoom: 0,
+            maxZoom: 20,
+            attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            ext: 'jpg'
+        });
+        Stadia_AlidadeSatellite;
 
         // Add Contours layer
         map.createPane('pane_Contours');
@@ -1108,11 +1135,13 @@
             {label: '<img src="legend/Geology_4.png" /> Geology', layer: layer_Geology_4},
             {label: '<img src="legend/CrownLandAOI_3.png" /> Crown Land AOI', layer: layer_CrownLandAOI_3},
             {label: '<b>Basemaps</b>', selectAllCheckbox: true, children: [
+                {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },
                 {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_2, radioGroup: 'bm' },
                 {label: "ESRI Satellite", layer: layer_ESRISatellite_3, radioGroup: 'bm' },
+                {label: "Stadia Alidade Satellite", layer: Stadia_AlidadeSatellite, radioGroup: 'bm' },
                 {label: "ESRI Topo", layer: layer_ESRITopo_1, radioGroup: 'bm' },
                 {label: "OpenTopoMap", layer: layer_OpenTopoMap_4, radioGroup: 'bm' },
-                {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_0, radioGroup: 'bm' },]},];
+            ]},];
         var lay = L.control.layers.tree(null, overlaysTree,{
             collapsed: true,
         });
