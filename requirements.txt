@@ -1,4 +1,10 @@
-rasterio
-richdem
+folium
+ipykernel
+jupytergis
 numpy
 matplotlib
+whitebox
+geopandas
+pillow
+pandas
+rasterio

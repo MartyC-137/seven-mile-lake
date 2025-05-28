@@ -368,10 +368,10 @@
             title: 'Ragged Falls'
         });
 
-        // Add Squaw Mountain marker
-        var squawMtnMarker = L.marker([45.261000, -66.498195], {
+        // Add West Mountain marker
+        var westMtnMarker = L.marker([45.261000, -66.498195], {
             icon: poiIcon,
-            title: 'Squaw Mountain'
+            title: 'Unnamed'
         });
 
         // Add Eagle Mountain marker
@@ -388,7 +388,7 @@
 
         // Add tooltips with images (desktop and mobile)
         var raggedFallsTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Ragged Falls</h4><img src="assets/ragged_falls.png" alt="Ragged Falls" class="poi-image"></div>';
-        var squawMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Squaw Mountain</h4><img src="assets/squaw_mtn.png" alt="Squaw Mountain" class="poi-image"></div>';
+        var westMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">West Mountain</h4><img src="assets/west_mtn.png" alt="West Mountain" class="poi-image"></div>';
         var eagleMtnCliffTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">Eagle Mountain</h4><img src="assets/eagle_mtn_cliff.png" alt="Eagle Mountain" class="poi-image"></div>';
         var eastEagleMtnTooltipContent = '<div class="poi-tooltip"><h4 style="margin: 0 0 8px 0; color: #333;">East Eagle Mountain</h4><img src="assets/east_eagle_mtn.png" alt="East Eagle Mountain" class="poi-image"></div>';
 
@@ -399,7 +399,7 @@
             interactive: true
         });
 
-        squawMtnMarker.bindTooltip(squawMtnTooltipContent, {
+        westMtnMarker.bindTooltip(westMtnTooltipContent, {
             permanent: false,
             direction: 'right',
             className: 'poi-tooltip-container',
@@ -422,7 +422,7 @@
 
         // Add markers to layer
         layer_PointsOfInterest.addLayer(raggedFallsMarker);
-        layer_PointsOfInterest.addLayer(squawMtnMarker);
+        layer_PointsOfInterest.addLayer(westMtnMarker);
         layer_PointsOfInterest.addLayer(eagleMtnCliffMarker);
         layer_PointsOfInterest.addLayer(eastEagleMtnMarker);
         layer_PointsOfInterest.addTo(map); // Add to map by default
