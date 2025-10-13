@@ -14,4 +14,8 @@ SELECT
     name1
 FROM seven_mile_lake.watercourses;
 
+CREATE INDEX IF NOT EXISTS idx_watercourses_mv_geom
+ON seven_mile_lake.watercourses_mv
+USING GIST (geom);
+
 SELECT * FROM seven_mile_lake.watercourses_mv;
