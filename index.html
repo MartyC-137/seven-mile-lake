@@ -168,7 +168,13 @@
         }).fitBounds([[45.282248481731685,-66.55339000606446],[45.32300544427646,-66.45712931671133]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
-        
+
+        // Centralized layer colors used for both map styling and legend swatches
+        var layerColors = {
+            ProtectedNaturalAreas: 'rgba(204,51,51,0.8)', // Updated to red
+            NatureLegacyAreas: 'rgba(115,178,115,0.8)',
+            ProtectedWatersheds: 'rgba(103,169,207,0.8)'
+        };
         // Add scale bar
         L.control.scale({
             imperial: false,  // Show only metric units
@@ -884,7 +890,7 @@
                 weight: 1.5, 
                 fill: true,
                 fillOpacity: 0.5,
-                fillColor: 'rgba(103,169,207,0.8)', // Blue-green - representing water protection
+                fillColor: layerColors.ProtectedWatersheds, // Blue-green - representing water protection
                 interactive: true,
             }
         }
@@ -940,7 +946,7 @@
                 weight: 1.5, 
                 fill: true,
                 fillOpacity: 0.5,
-                fillColor: 'rgba(115,178,115,0.8)', // Lighter green - complementing Protected Natural Areas
+                fillColor: layerColors.NatureLegacyAreas, // Lighter green - complementing Protected Natural Areas
                 interactive: true,
             }
         }
@@ -1031,7 +1037,7 @@
                 weight: 1.5, 
                 fill: true,
                 fillOpacity: 0.5,
-                fillColor: 'rgba(76,140,90,0.8)', // Forest green - representing protected nature
+                fillColor: layerColors.ProtectedNaturalAreas, // Forest green - representing protected nature
                 interactive: true,
             }
         }
@@ -1368,9 +1374,9 @@
             {label: "Points of Interest", layer: layer_PointsOfInterest},
             {label: "Contours", layer: layer_Contours},
             {label: '<b>Protected Areas</b>', selectAllCheckbox: true, children: [
-                {label: '<img src="legend/ProtectedNaturalAreas_9.png" /> Protected Natural Areas', layer: layer_ProtectedNaturalAreas_9},
-                {label: '<img src="legend/NatureLegacyAreas_8.png" /> Nature Legacy Areas', layer: layer_NatureLegacyAreas_8},
-                {label: '<img src="legend/ProtectedWatersheds_7.png" /> Protected Watersheds', layer: layer_ProtectedWatersheds_7}]},
+                {label: '<i style="background: ' + layerColors.ProtectedNaturalAreas + '; width:18px; height:12px; display:inline-block; margin-right:6px; border:1px solid rgba(35,35,35,0.8);"></i> Protected Natural Areas', layer: layer_ProtectedNaturalAreas_9},
+                {label: '<i style="background: ' + layerColors.NatureLegacyAreas + '; width:18px; height:12px; display:inline-block; margin-right:6px; border:1px solid rgba(35,35,35,0.8);"></i> Nature Legacy Areas', layer: layer_NatureLegacyAreas_8},
+                {label: '<i style="background: ' + layerColors.ProtectedWatersheds + '; width:18px; height:12px; display:inline-block; margin-right:6px; border:1px solid rgba(35,35,35,0.8);"></i> Protected Watersheds', layer: layer_ProtectedWatersheds_7}]},
             {label: '<img src="legend/Roads_6.png" /> Roads', layer: layer_Roads_6},
             {label: '<img src="legend/Watercourses_5.png" /> Watercourses', layer: layer_Watercourses_5},
             {label: '<img src="legend/Geology_4.png" /> Geology', layer: layer_Geology_4},
