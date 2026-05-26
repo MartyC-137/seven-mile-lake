@@ -337,19 +337,32 @@
             iconAnchor: [15, 15]
         });
 
-        // Create trailhead marker
+        // Ragged Falls Trailhead
         var trailheadMarker = L.marker([45.229193, -66.469980], {
             icon: trailheadIcon,
             title: 'Trailhead'
         });
 
+        // Highway 1 Parking Lot
         var trailheadMarker2 = L.marker([45.191262, -66.457331], {
             icon: trailheadIcon,
             title: 'Trailhead'
         });
 
+        // Eagle Mountain Trailhead
+        var trailheadMarker3 = L.marker([45.274485, -66.477867], {
+            icon: trailheadIcon,
+            title: 'Trailhead'
+        });
+
+        // Other Highway Lot
+        var trailheadMarker4 = L.marker([45.194985, -66.474384], {
+            icon: trailheadIcon,
+            title: 'Trailhead'
+        });
+
         // Create trailhead layer group
-        var layer_Trailhead = L.layerGroup([trailheadMarker, trailheadMarker2]);
+        var layer_Trailhead = L.layerGroup([trailheadMarker, trailheadMarker2, trailheadMarker3, trailheadMarker4]);
         layer_Trailhead.addTo(map); // Add to map by default
 
         // Create Points of Interest layer
