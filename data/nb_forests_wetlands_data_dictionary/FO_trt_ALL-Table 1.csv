@@ -1,0 +1,51 @@
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,LandBase,,,,,,,
+,,,,,,,,
+,TREATMENTS,,,,,,,
+,,,,,,,,
+,Value,Description,Approximate Group,Information Found in,Notes,Even or uneven aged,Description,Notes
+,UK,Uknown,UK,"HARVTRT (Harvest current, history)  H1, H2, H3, H4 (Forest, LandBase)",,,Inconnu,
+,CC,Clear-cut   ,CC,,,,Coupe à blanc,
+,RC,Regeneration protection clear cut,CC,,,,Coupe à blanc de protection de régénération,
+,RR,Residual Removal,CC,,Tends to be larger leftover cut,,Élimination des résidus,Tendance à avoir des restes de coupe plus importants
+,FW,Fuelwood clear cut,CC,,,,Coupe à blanc de bois de chauffage,
+,SA,Salvage cut,CC,,Tends to be small leftover cut,,Coupe de récupération,Tendance à avoir des restes de coupe plus importants
+,PC,Partial cut,PC,,,UA,Coupe partielle,
+,BB,Burn,CC,,,,Brûlis,
+,PB,Partial burn,PC,,,UA,Brûlis partiel,
+OR,SD,Seed tree cut,PC,,,EA,Coupe de semenciers,
+OR,SE,Seed tree cut,PC,,Deprecated after xxxx interp,EA,Coupe de semenciers,Déprécié après xxxx interp.
+,PA,Patch cut,PC,,,UA,Coupe par trouées,
+,CT,Commercial thinning,PC if not PL or TI,,,,Éclaircie commerciale,
+,ST,Strip cut,PC,,,EA,Coupe par bandes,
+,SC,Selection cut,PC,,,UA,Coupe de jardinage,
+OR,SH,Shelterwood cut,PC,,,EA,Coupe progressive,
+,TP,Two-pass cut,PC,,,EA,Coupe à deux passages,
+,SR,Softwood removal cut,PC,,,UA,Coupe secondaire des résineux,
+,WD,Wind,CC,,Added during 2017 interp,,Vent,Ajouté pendant l'interp. de  2017
+,IT,Intermediate/semi-commercial thinning,PC,,Deprecated after 2017 interp,EA,Éclaircie intermédiaire ou semi-commerciale,Déprécié après l'interp. de 2017
+,UP,Under plant,PL,"RFTRT (Reforestation current, history), PL (Forest, LandBase)",,,,
+,PL,Full plantation,PL,,,,Plantation complète,
+,FP,Fill plantation,PL,,,,Plantation intercalaire,
+,FT,Family test,PL,,,,Test de la famille,
+,PT,Progeny test,PL,,,,Test de la descendance,
+,CL,Plantation cleaning,PL,"SITRT (StandImprovement current, history), SI (Forest, LandBase)",,,Dégagement de la plantation,
+,TI,Pre-commercial thin,TI,,,,Éclaircie précommerciale,
+,,Blank                                                        ,,All,,,Vide,
+,,,,,,,,
+,,"SilvID (harvID, plantID, thinID) notes: ",,,,,,
+,,"Crown harvid: 307023410 - 9 characters: Region(1)-Holder(2)-Blk(4)-Year(2)
+Marketing Board: No harv_id as they do not submit cuts
+Freehold: JDI-BH0352803  Distrcit (3)-Blk(4)-Yr (2)",,,,,,
+,,"Crown plantid - 13 characters: 203OPDY18BP01  Region(1)-Holder(2)-Blk(4)-Year(2)- Trt (2)- Section(2)
+Marketing Board: TBD
+Freehold: TBD",,,,,,
+,,"Crown thinid - 13 characters: 406092015BT01  Region(1)-Holder(2)-Blk(4)-Year(2)- Trt (2)- Section(2)
+Marketing Board: TBD
+Freehold: TBD",,,,,,

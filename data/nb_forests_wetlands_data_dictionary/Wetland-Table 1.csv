@@ -1,0 +1,113 @@
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,LandBase,,,,
+,,,,,
+,WETLAND,,,,
+,,,,,
+,Companion document: ,,NB Integrated Land Classification System,,
+,Document accompagnant:,,Système intégré de classification des terres du NB,,
+,,,,,
+,,,,,
+,Domain Link,Name,Description,Data Type,Description_F
+,,OBJECTID,Object ID (internal use),OID,Identificateur de l'objet (usage interne)
+,WLOC,WLOC,Wetland category,TEXT,Catégorie de terres humides
+,WC,WC,Dominant wetland class,TEXT,Classe de terres humides prédominantes
+,WRI,WRI,Water regime indicator,TEXT,Indicateur de régime hydrique
+,IM,IM,Impoundment modifier,TEXT,Déterminant d'endiguement
+,VT,VT,Specific vegetation cover type,TEXT,Type particulier de couverture végétale
+,SPVC,SPVC,Percent vegetation cover for specific vegetation cover type,SHORT,Pourcentage de couverture végétale pour un type particulier de couverture végétale
+,,DATAYR,Year of wetland attribute data (photo year for photo-interpreted wetlands),LONG,Année des données sur les attributs des terres humides (année de photographie des terres humides interprétées à partir de photos)
+,PSW,PSW,Flag for Provincially Significant Wetland designation,TEXT,Indicateur de la désignation de terres humides d'importance provinciale
+,DATASRC,DATASRC,Source of wetland attribute data,TEXT,Source des données sur les attributs des terres humides
+,WATERCODE,TBD,TBD,TEXT,À déterminer
+,WATERID,TBD,TBD,LONG,À déterminer
+,WATERSHED,TBD,TBD,TEXT,À déterminer
+,,SHAPE.AREA,Polygon area in square metres,DOUBLE,Superficie du polygone en mètres carrés
+,,,,,
+,,,,,
+,WETLAND CATEGORY,Value,Description,-,Description_F
+,,C,Coastal -wetlands seaward of the high water mark / landward limit line,-,Marais côtiers - terres humides situées au-delà de la ligne normale des hautes eaux/limite du côté intérieur
+,,F,Freshwater - wetlands typically located beyond the extent of salt water inundation and are landward of the high water mark/landward limit line,-,Marais d'eau douce - terres humides habituellement situées au-delà des secteurs d’inondation des eaux salées et qui se trouvent du côté intérieur des terres de la laisse des hautes eaux/limite du côté intérieur
+,, ,Blank ,-,Vide 
+,,,,,
+,,,,,
+,WETLAND CLASS,Value,Description,-,Description_F
+,,AB,Aquatic Bed - wetlands dominated by permanent shallow standing water (<2 meters in depth during mid-summer) that may contain plants that grow on or below the surface of the water ,-,Lits aquatiques -  terres humides dans lesquelles prédomine de l’eau stagnante permanente peu profonde (<2 mètres de profondeur au milieu de l'été) pouvant abriter des plantes qui poussent à la surface de l’eau ou sous de la surface
+,,BC,"Beach - unconsolidated deposits of sand, gravel, cobble and boulders on the shores of freshwater or coastal water bodies ",-,"Plages -  dépôts meubles de sable, de gravier, de galets et de blocs rocheux sur les rivages de cours d'eau douce ou de masses d'eau côtières"
+,,BO,"Bog - wetlands typically covered by peat, which have a saturated water regime as well as a closed drainage system and frequently covered by ericaceous shrubs, sedges and sphagnum moss and/or black spruce ",-,"Tourbières hautes -  terres humides habituellement recouvertes de tourbe assujetties à un régime hydrique saturé et ayant un mode de drainage fermé, fréquemment couvertes d’arbustes éricacés, de carex, de sphaigne et/ou d’épinette noire"
+,,CM,Coastal Marsh - wetlands dominated by rooted herbaceous plants that drain directly into coastal waters and have the potential to be at least partially inundated with salt or brackish water ,-,"Marais côtiers -  terres humides dans lesquelles prédominent les plantes herbacées à racines, qui se drainent directement dans des eaux côtières et qui peuvent être à tout le moins partiellement
+inondées d’eau salée ou saumâtre"
+,,DU,Dune - unconsolidated sand or gravel deposits capping beach environments recognized by raised topography and may be vegetated with salt-tolerant vegetation such as marram grass or may be established with ericaceous vegetation or tree species,-,"Dunes -  dépôts de sable et de gravier meubles coiffant les
+environnements des plages qu’on reconnaît par leur relief surélevé, pouvant être recouverts d’une végétation tolérante au sel, comme des ammophiles, ou pouvant soutenir l’établissement d’une végétation d’éricacées ou d’essences d’arbres"
+,,FE,"Fen - wetlands typically covered by peat, having a saturated water regime, and an open drainage system and typically covered by sedges ",-,"Tourbières basses -  terres humides habituellement recouvertes de tourbe, assujetties à un régime hydrique saturé et possédant un
+mode de drainage ouvert, généralement couvertes de carex"
+,,FM,Freshwater Marsh - wetlands dominated by rooted herbaceous plants and includes most typical marshes as well as seasonally flooded wet meadows ,-,"Marais d’eau douce -  marais dans lesquels prédominent les plantes herbacées à racines, ainsi que les prairies mouillées qui sont inondées de façon saisonnière "
+,,FW,Forested Wetland - forested areas with abundant standing water including the seasonally flooded forest of the Saint John River Valley and other floodplains ,-,"Terres humides forestières - secteurs boisés où l'eau stagnante est abondante, comprenant les forêts inondées de façon saisonnière de la plaine inondable du fleuve Saint-Jean et d'autres plaines inondables"
+,,NP,Old Inventory wetland - no attributes; applies to some Industrial Freehold blocks ,-,Terres humides de l'ancien inventaire - pas d'attributs; s'applique à certains blocs de terres industrielles en franche tenure
+,,RK,Rocky Shore - areas of bedrock exposed between the extreme high and extreme low tide levels on the coastal shores often vegetated with rockweed and other plants that attach to the rock substrate ,-,"Rivages rocheux -  secteurs où le sous-sol rocheux affleure entre les niveaux extrêmes de marée haute et de marée basse sur les rivages côtiers, fréquemment recouverts d’une végétation de fucus
+et d’autres végétaux qui se fixent au substrat rocheux"
+,,SB,Shrub Wetland - wetlands dominated by a variety of shrubs including shrub dominated marshes and alder thickets ,-,"Terres humides arbustives -  terres humides où prédominent divers arbustes, y compris les marais où prédominent les arbustes ou les taillis d’aulnes"
+,,TF,Tidal Flat - areas of mud and sandy mud exposed between the extreme high tide and extreme low tide mark and can be vegetated with various types of seaweed or sea grasses such as eel grass ,-,"Waddens -  secteurs de boue et de boue sableuse découverts entre les laisses extrêmes de haute et de basse mer et qui peuvent être recouverts d’une végétation de divers types d’algues ou de zostères, comme la vallisnérie spirale"
+,,WL,"New Inventory wetland, but attributes unavailable; applies to some Industrial Freehold blocks",-,"Terres humides du nouvel inventaire, mais dont les attributs ne sont pas disponibles; s'applique à certains blocs de terres industrielles en franche tenure"
+,,  ,Blank ,-,Vide 
+,,,,,
+,,,,,
+,WATER REGIME INDICATOR,Value,Description,Data Type,Description_F
+,,PF,Permanently Flooded - >= 20% of the wetland is covered by standing surface water for all or most of the growing season ,-,Inondé en permanence - au moins 20 % de la terre humide est recouverte d’eau de surface stagnante pendant la totalité ou la majeure partie de la saison de croissance
+,,SA,"Saturated - the substrate is saturated to the surface for extended periods during the growing season, but less than 20% of the wetland is covered by surface water ",-,"Saturé - le substrat est saturé jusqu’à la surface pendant des périodes prolongées au cours de la saison de croissance, mais moins des 20 % de la terre humide sont recouverts d’eau de surface"
+,,SF,Seasonally Flooded - surface water is present on the wetland only for a short period during the growing season in most years ,-,"Inondé de façon saisonnière - de l’eau de surface est présente sur la terre humide seulement durant une brève période, la plupart des années"
+,,TD,Tidal - surface water may only be present on wetlands during high tide and the level of water fluctuates with tidal influence,-,Maréal - de l’eau de surface peut seulement être présente sur les terres humides et dans les milieux côtiers à marée haute et le niveau de l’eau fluctue sous l’influence des marées
+,,  ,Blank,-,Vide
+,,,,,
+,,,,,
+,IMPOUNDMENT MODIFIER,Value,Description,Data Type,Description_F
+,,BP,Beaver Pond - used if the beaver dam is affecting the water regime of a wetland ,-,Étang de castors - utilisé si la digue de castors a une incidence sur le régime hydrique d’une terre humide
+,,DI,Duck's Unlimited impoundment ,-,Endiguement de Canards Illimités
+,,MI,Man-made Impoundment (other than Duck's Unlimited impoundments),-,"Endiguement artificiel (autre qu'un endiguement de Canards
+Illimités)"
+,,  ,Blank ,-,Vide 
+,,,,,
+,,,,,
+,SPECIFIC VEGETATION TYPE,Value,Description,Data Type,Description_F
+,,AW,Alders - alder stands or swales that are associated with a watercourse or a wetland ,-,Aulnes - aulnaies ou baissières d’aulnes associées à un cours d’eau ou à une terre humide
+,,EV,"Emergent Vegetation - common marsh plants include cattails, bur-reeds, various sedges, rushes and grasses like bluejoint and cordgrass spp., flowering herbaceous plants, goldenrods, asters and many others",-,"Végétation émergente - les plantes des marais communes comprennent les massettes, les rubaniers, divers carex, roseaux et herbes, comme le foin bleu et la chaume, des plantes herbacées à fleurs, les verges d’or, les asters et nombre d’autres"
+,,FF,Forested Undifferentiated Vegetation - non-commercial or commercial tree species (to be classified as hardwood or softwood in 2003-2012 inventory),-,Végétation forestière non différenciée - essences d'arbres commerciales ou non commerciales (à classer comme feuillus ou résineux dans l'inventaire de 2003 à 2012)
+,,FH,Forested Hardwood Vegetation - non-commercial or commercial hardwood tree species such as silver maple,-,"Végétation forestière de feuillus - essences feuillues commerciales ou non commerciales, comme l’érable argenté"
+,,FS,"Forested Softwood Vegetation - non-commercial or commercial softwood tree species such as cedar, tamarack and black spruce ",-,"Végétation forestière de résineux - essences résineuses commerciales ou non commerciales, comme le thuya, le mélèze laricin et l’épinette noire "
+,,FU,Feature Unvegetated - used to describe coastal features or shoreline features that do not have visible vegetation ,-,Milieu sans végétation - utilisé pour décrire les milieux côtiers ou les milieux littoraux ne comportant aucune végétation visible
+,,FV,Feature Vegetated - used to describe coastal or shoreline features that have visible vegetation (i.e. exposed at low tide or visible submerged vegetation) ,-,Milieu avec végétation - utilisé pour décrire les milieux côtiers ou les milieux littoraux dont la végétation est visible (c.-à-d. exposés à marée basse ou végétation immergée visible) 
+,,OV,Open-water Vegetated - open water with vegetation present on top of or near the water surface ,-,Eaux libres avec végétation -  eaux libres dont la végétation est présente à la surface de l’eau ou juste au-dessous de la surface
+,,OW,Open-water Unvegetated - open water with no vegetation present ,-,Eaux libres sans végétation - eaux libres où aucune végétation n’est présente
+,,SV,"Shrub Vegetation (except alder) - dominant shrubs are willows, dogwoods, meadow sweet, bog rosemary, leatherleaf, Labrador tea and saplings of trees such as red maple",-,"Végétation arbustive, hormis les aulnes - les espèces prédominantes d’arbustes comprennent notamment les saules, les cornouillers, la spirée blanche, l’andromède glauque, le cassandre caliculé, le thé du Labrador et les gaulis d’arbres comme l’érable rouge"
+,,  ,Blank ,-,Vide 
+,,,,,
+,,,,,
+,,,,,
+,PERCENT COVER OF SPECIFIC VEGETATION TYPE,Value,Description,-,Description_F
+,,1,< 5% of the wetland area or coastal feature is covered in vegetation ,-,< 5 % de la superficie de la terre humide ou du milieu côtier sont recouverts de végétation 
+,,2,5-25% of the wetland area or coastal feature is covered in vegetation ,-,de 5 à 25 % de la superficie de la terre humide ou du milieu côtier sont recouverts de végétation 
+,,3,26-75% of the wetland area or coastal feature is covered in vegetation ,-,de 26 à 75 % de la superficie de la terre humide ou du milieu côtier sont recouverts de végétation 
+,,4,76-95% of the wetland area or coastal feature is covered in vegetation ,-,de 76 à 95 % de la superficie de la terre humide ou du milieu côtier sont recouverts de végétation 
+,,5,> 95% of the wetland area or coastal feature is covered in vegetation ,-,> 95 % de la superficie de la terre humide ou du milieu côtier sont recouverts de végétation 
+,,,,,
+,,,,,
+,,,,,
+,PROVINCIALLY SIGNIFICANT WETLAND,Value,Description,-,Description_F
+,,Y,Designated as a Provincially Significant Wetland,-,Désignation des terres humides d'importance provinciale
+,,,Blank,-,Vide
+,,,,,
+,,,,,
+,Wetland DATA SOURCE,Value,Description,-,Description_F
+,,INTERP,Photo-interpreted wetland attribute data ,-,Données sur les attributs d'une terre humide interprétées à partir de photos
+,,INTRPC,Photo-interpretation has been ground-truthed by DNR staff ,-,Interprétation à partir de photos validée sur le terrain par le personnel du MRN
+,,INTRPO,Photo-interpretation has been reviewed in office by DNR staff ,-,Interprétation à partir de photos examinée au bureau par le personnel du MRN
+,,INTRPR,Photo-interpretation delineation requires further review when DNR's Ortho coverage becomes available,-,La délimitation de l'interprétation à partir de photos nécessitera un examen plus approfondi quand la couverture orthométrique du MRN sera disponible
+,,INTRPV,Photo-interpretation has been ground-truthed by the photo-interpreter ,-,Interprétation à partir de photos validée sur le terrain par l'interprète des photos
+,,INTRPW,Photo-interpretation has been reviewed in office by DNR Fish and Wildlife staff ,-,Interprétation à partir de photos examinée au bureau par le personnel de la pêche et de la chasse du MRN
+,,GROUND,Ground-truthed wetland attribute data,-,Données sur les attributs des terres humides validées sur le terrain
+,,      ,Blank ,-,Vide 

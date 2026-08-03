@@ -1,0 +1,18 @@
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,DNRED,,,,,,,,,
+,Department of Natural Resources and Energy Development (DNRED) | ministere des Ressources naturelles et du Développement de l’énergie,,,,,,,,,
+,,,,,,,,,,
+,Link,Name,Description,-,-,-,-,,Nom,Description
+,LandBase,LandBase,"An updated snapshot of New Brunswick's LandBase (based on modified input layers of forest, wetland, waterbodies and non-forest) including polygons split by holder boundaries. LandBase 'snapshots' are available in SDEOWNER.DNRLandbase and dated accordingly. ",-,-,-,-,,LandBase,"Un instantané mis à jour du LandBase du Nouveau-Brunswick (basé sur des couches d'entrée modifiées de forêts, de zones humides, de plans d'eau et de zones non forestières) comprenant des polygones divisés par les limites des titulaires. Les instantanés du LandBase sont disponibles dans SDEOWNER.DNRLandbase et datés en conséquence. "
+,Holder,Holder,Shows various ownership of land throughout the province. Note: updates are typically only done on those lands with a Crown code of 1.,-,-,-,-,,propriétaire foncier,Montre les différents propriétaires de terrains dans la province. Remarque : les mises à jour ne sont généralement effectuées que pour les terres dont le code de la Couronne est 1.
+,ELC,Ecological Land Classification,Ecological Land Classification (ELC) - Ecoregion and Ecodistrict code descriptions.,-,-,-,-,,Classification écologique des terres,Classification écologique des terres (CEL) - Description des codes des écorégions et des écodistricts.
+,Forest,Forest,Forest interpretted polygons at time of imagery,-,-,-,-,,Forêt,Polygones forestiers interprétés au moment de l'imagerie
+,Wetland,Wetland,Current wetland polygons,-,-,-,-,,Zone humide,Polygones de zones humides actuels
+,NonForest,Nonforest,Current non-forest polygons,-,-,-,-,,Non forestier,Polygones non forestiers actuels
+,,Polygon roads (...being deprecated),"Unprocessed Provincial highways, causeways and resource access roads",-,-,-,-,,Routes polygonales (...en cours de dépréciation),"Autoroutes provinciales, chaussées et routes d'accès aux ressources non traitées"
+,Waterbody,Waterbody,Current water polygons,-,-,-,-,,Plan d'eau,Polygones d'eau actuels
+,Transportation,Transportation,Provincial roads,-,-,-,-,,Transport,Routes provinciales

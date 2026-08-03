@@ -1,0 +1,161 @@
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,LandBase,,,,,,
+,,,,,,,
+,Companion document: ,,NB Integrated Land Classification System,,,,
+,Document accompagnant:,,Système intégré de classification des terres du NB,,,,
+,,,,,,,
+,Domain Link,Name,Description_E,Data Type,Additional Background,Description_F,Contexte supplémentaire
+,,OBJECTID,Object ID (internal use only),OID,,Identificateur d'objet (réservé à l'usage interne),
+,CAT,CAT,Category,TEXT,"Note: NF LandBase coded class is similar but different from the NF SDE feature class (an input to LandBase).  The NF LandBase coded class adds additional non-forested info from items like forested roads (from transportation input layer). The WL and WB LandBase coded class is similar but different from the WL and WB SDE feature classes (input layers to LandBase). For example, some open water WLs are coded/classed as WB in LandBase. ",Catégorie,
+,,STDLAB,Unique stand identifier (4 digit Map # + Stand #),LONG,,Identifiant de peuplement unique (no de carte à 4 chiffres + no du peuplement),
+,HOLDER,HOLDER,Holder code,SHORT,,Code du détenteur,
+,FST,FST,Forest stand type,SHORT,,Type de peuplement forestier,
+,SITEI,SITEI,Poor site indicator,TEXT,,Indicateur de site pauvre,
+,VOLI,VOLI,Residual volume indicator,TEXT,,Indicateur de volume résiduel,
+,ORIGIN,ORIGIN,"Origin of stand (B,C,F,N,W)",TEXT,,"Origine du peuplement (B, C, F, N, W)",
+,TRT,TRT,Latest silviculture treatment ,TEXT,,Dernier traitement sylvicole,
+,,TRTYR,Year of latest silviculture treatment ,SHORT,,Année du dernier traitement sylvicole,
+,H1-H4,H1,1st harvest treatment ,TEXT,Harvest history where H1 is the oldest and H4 is the most recent.  History information was compiled for a single forest interpreted polygon by intersecting harvest history with the forest interp and summarizing the overlap.  History was added when: 1) 70% or more of the harvest history block overlaps the forest polygon or 2) if 30% or more of the harvest history block overlaps the forest polygon and 90% or more of that block falls into the forest polygon.,Traitement de la première récolte,"Historique de la récolte où R1 est la plus ancienne et R4, la plus récente. Les renseignements sur l'historique ont été compilés pour un seul polygone interprété de la forêt en recoupant l'historique de la récolte et l'interp. de la forêt et en résumant le chevauchement. L'historique a été ajouté quand : 1) 70 % ou plus du quadrat de l'historique de la récolte chevauchait le polygone de la forêt ou 2) 30 % ou plus du quadrat de l'historique de la récolte chevauchait le polygone de la forêt et 90 % ou plus de ce quadrat faisait partie du polygone de la forêt."
+,,H1YR,Year of 1st harvest treatment,SHORT,,Année du traitement de la première récolte,
+,,H2,2nd harvest treatment,TEXT,,Traitement de la deuxième récolte,
+,,H2YR,Year of 2nd harvest treatment,SHORT,,Année du traitement de la deuxième récolte,
+,,H3,3rd harvest treatment,TEXT,,Traitement de la troisième récolte,
+,,H3YR,Year of 3rd harvest treatment,SHORT,,Année du traitement de la troisième récolte,
+,,H4,4th harvest treatment,TEXT,,Traitement de la quatrième récolte,
+,,H4YR,Year of 4th harvest treatment,SHORT,,Année du traitement de la quatrième récolte,
+,RF,RF,Reforestation treatment,TEXT,Reforestation history (full or fill plant),Traitement de reboisement,Historique du reboisement (plantation complète ou intercalaire)
+,,RFYR,Year of reforestation treatment,SHORT,,Année du traitement de reboisement,
+,SI,SI,Stand Improvement treatment (PCT or Plantation cleaning),TEXT,Stand improvement history (pre-commercial thinning or plantation cleaning),Traitement d'amélioration du peuplement (TCP ou nettoiement de la plantation),Historique de l'amélioration du peuplement (éclaircie précommerciale ou nettoiement de la plantation)
+,,SIYR,Year of Stand Improvement treatment,SHORT,,Année du traitement d'amélioration du peuplement,
+,UNTREATI,UNTREATI,Reason for non-treatment of area within treated block,SHORT,Optionally record reason for non-treatment of area within treated block,Raison du non-traitement de la zone dans le quadrat traité,Raison facultative de l'enregistrement du non-traitement de la zone dans le quadrat traité
+,LPRIORITY,LPRIORITY,Dominant layer (1 or 2),SHORT,"indicates which layer is dominant:
+ ● if FST =1 then LPRIORITY = 1
+ ● if FST=3 then LPRIORITY=2
+ ● if FST=2 then LPRIORITY=1 unless L1CC=1 & L2CC > 1 or L1CC=1 & L2CC=1 and latest harvest treatment is a partial harvest code then LPRIORITY=2",Strate dominante (1 ou 2),"Indique quelle strate est dominante :
+ ● si TPF =1, alors SPRIORIT = 1
+ ● si TPF=3, alors SPRIORIT=2
+ ● si TPF=2, alors SPRIORIT=1 , à moins que S1FC=1 et S2FC > 1 ou S1FC=1 et S2FC=1 et que le dernier traitement de la récolte porte le code de récolte partielle, alors SPRIORIT=2"
+,L1DATASRC,L1DATASRC,Source of stand data:        ,TEXT,,Source des données sur le peuplement :        ,
+,,L1DATAYR,Year of merchantable layer data,SHORT,Note: DATAYR of 2014 means layers is updated to 2014 in year of photo-interpretation.,Année des données sur la strate marchande ,
+,L1FUNA,L1FUNA,Merchantable layer forest unit name based on species composition (2008 algorithm),TEXT,,Nom de l'unité forestière de la strate marchande selon la composition des essences (algorithme de 2008),
+,,L1ESTABYR,Year of merchantable layer establishment (based on treatment year),SHORT,,Année d'établissement de la strate marchande (selon l'année du traitement),
+,,L1ARYR,Year of merchantable layer establishment (based on advanced regeneration),SHORT,,Année d'établissement de la strate marchande (selon la régénération préexistante),
+,L1S1-L1S5,L1S1,Merchantable layer first species code (in order of predominance),TEXT,,Code de la première essence de la strate marchande (par ordre d’importance),
+,L1DS1-L1DS5,L1DS1,Merchantable layer first species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la première essence de la strate marchande  ,
+,L1PR1-L1PR5,L1PR1,Merchantable layer first species percent ratio,SHORT,,Ratio en pourcentage de la première essence de la strate marchande,
+,,L1S2,Merchantable layer second species code,TEXT,,Code de la deuxième essence de la strate marchande,
+,,L1DS2,Merchantable layer second species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la deuxième essence de la strate marchande ,
+,,L1PR2,Merchantable layer second species percent ratio,SHORT,,Ratio en pourcentage de la deuxième essence de la strate marchande,
+,,L1S3,Merchantable layer third species code,TEXT,,Code de la troisième essence de la strate marchande,
+,,L1DS3,Merchantable layer third species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la troisième essence de la strate marchande ,
+,,L1PR3,Merchantable layer third species percent ratio,SHORT,,Ratio en pourcentage de la troisième essence de la strate marchande,
+,,L1S4,Merchantable layer fourth species code,TEXT,,Code de la quatrième essence de la strate marchande,
+,,L1DS4,Merchantable layer fourth species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la quatrième essence de la strate marchande,
+,,L1PR4,Merchantable layer fourth species percent ratio,SHORT,,Ratio en pourcentage de la quatrième essence de la strate marchande,
+,,L1S5,Merchantable layer fifth species code,TEXT,,Code de la cinquième essence de la strate marchande,
+,,L1DS5,Merchantable layer fifth species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la cinquième essence de la strate marchande,
+,,L1PR5,Merchantable layer fifth species percent ratio,SHORT,,Ratio en pourcentage de la cinquième essence de la strate marchande,
+,L1DS,L1DS,Merchantable layer development stage,TEXT,,Stade de développement de la strate marchande ,
+,L1CCI,L1CCI,Merchantable layer variable crown closure indicator,SHORT,,Indicateur de fermeture variable du couvert de la strate marchande,
+,L1CC,L1CC,Merchantable layer crown closure code,SHORT,,Code de fermeture du couvert de la strate marchande,
+,,L1VOL,Merchantable layer residual volume (m3/ha),SHORT,L1VOL (merchantable volume standing) will continue to be collected till the end of the current interpretation cycle while L1BA will be optionally submitted via forest updates,Volume résiduelle de la strate marchande (m3/ha),"On continuera de recueillir les données de S1VOL (volume marchand debout) jusqu'à la fin du cycle d'interprétation actuel, tandis qu'on présentera les données de S1ST de manière facultative par l'entremise des mises à jour sur la forêt."
+,,L1BA,Merchantable layer residual basal area (m2/ha),SHORT,,Surface terrière résiduelle de la strate marchande (m2/ha),
+,L1PSTOCK,L1PSTOCK,Merchantable layer planted species stocking class,SHORT,,Classe de densité relative des essences plantées dans la strate marchande ,
+,L1VS,L1VS,Merchantable layer number of canopy layers,SHORT,,Nombre de strates du couvert de la strate marchande,
+,,L1HT,Merchantable layer average height in metres,SHORT,,"Hauteur moyenne de la strate marchande, en mètres",
+,L1DC,L1DC,Merchantable layer density class,SHORT,,Classe de densité de la strate marchande,
+,L1SC,L1SC,Merchantable layer size class,SHORT,,Classe de taille de la strate marchande,
+,L2DATASRC,L2DATASRC,Source of unmerchantable layer data,TEXT,,Source des données sur la strate non marchande,
+,,L2DATAYR,Year of unmerchantable layer data,SHORT,,Année des données sur la strate non marchande,
+,L2FUNA,L2FUNA,Unmerchantable layer forest unit name based on species composition (2008 algorithm),TEXT,,Nom de l'unité forestière de la strate non marchande selon la composition des essences (algorithme de 2008),
+,,L2ESTABYR,Year of unmerchantable layer establishment (based on treatment year),SHORT,,Année d'établissement de la strate non marchande (selon l'année du traitement),
+,,L2ARYR,Year of unmerchantable layer establishment (based on advanced regeneration),SHORT,,Année d'établissement de la strate non marchande (selon la régénération préexistante),
+,L2S1-L2S5,L2S1,Unmerchantable layer first species code (in order of predominance),TEXT,,Code de la première essence de la strate non marchande (par ordre d’importance),
+,L2DS1-L2DS5,L2DS1,Unmerchantable layer first species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la première essence de la strate non marchande  ,
+,L2PR1-L2PR5,L2PR1,Unmerchantable layer first species percent ratio,SHORT,,Ratio en pourcentage de la première essence de la strate non marchande,
+,,L2S2,Unmerchantable layer second species code,TEXT,,Code de la deuxième essence de la strate non marchande,
+,,L2DS2,Unmerchantable layer second species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la deuxième essence de la strate non marchande ,
+,,L2PR2,Unmerchantable layer second species percent ratio,SHORT,,Ratio en pourcentage de la deuxième essence de la strate non marchande,
+,,L2S3,Unmerchantable layer third species code,TEXT,,Code de la troisième essence de la strate non marchande,
+,,L2DS3,Unmerchantable layer third species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la troisième essence de la strate non marchande ,
+,,L2PR3,Unmerchantable layer third species percent ratio,SHORT,,Ratio en pourcentage de la troisième essence de la strate non marchande,
+,,L2S4,Unmerchantable layer fourth species code,TEXT,,Code de la quatrième essence de la strate non marchande,
+,,L2DS4,Unmerchantable layer fourth species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la quatrième essence de la strate non marchande,
+,,L2PR4,Unmerchantable layer fourth species percent ratio,SHORT,,Ratio en pourcentage de la quatrième essence de la strate non marchande,
+,,L2S5,Unmerchantable layer fifth species code,TEXT,,Code de la cinquième essence de la strate non marchande,
+,,L2DS5,Unmerchantable layer fifth species development stage/age class,TEXT,,Stade de développement/catégorie d'âge de la cinquième essence de la strate non marchande,
+,,L2PR5,Unmerchantable layer fifth species percent ratio,SHORT,,Ratio en pourcentage de la cinquième essence de la strate non marchande,
+,L2DS,L2DS,Unmerchantable layer development stage,TEXT,,Stade de développement de la strate non marchande ,
+,L2CCI,L2CCI,Unmerchantable layer variable crown closure indicator,SHORT,,Indicateur de fermeture variable du couvert de la strate non marchande,
+,L2CC,L2CC,Unmerchantable layer crown closure code,SHORT,,Code de fermeture du couvert de la strate non marchande,
+,L2PSTOCK,L2PSTOCK,Unmerchantable layer planted species stocking class ,SHORT,,Classe de densité relative des essences plantées dans la strate non marchande  ,
+,L2NSTOCK,L2NSTOCK,Unmerchantable layer natural stocking class ,SHORT,,Classe de densité relative des essences naturelles dans la strate non marchande,
+,L2VS,L2VS,Unmerchantable layer number of canopy layers,SHORT,,Nombre de strates de couvert dans la strate non marchande,
+,,L2HT,Unmerchantable layer average height in metres,SHORT,,"Hauteur moyenne de la strate non marchande, en mètres",
+,L2DC,L2DC,Unmerchantable layer density class,SHORT,,Classe de densité de la strate non marchande,
+,,HARV_ID,Latest harvest treatment identifier (clearcut or partial),TEXT,"Crown harvid: 307023410 - 9 characters: Region(1)-Holder(2)-Blk(4)-Year(2)
+Marketing Board: No harv_id as they do not submit cuts
+Freehold: JDI-BH0352803  Distrcit (3)-Blk(4)-Yr (2)",Identifiant du dernier traitement de la récolte (coupe à blanc ou partielle),"Crown harvid: 307023410 - 9 characters: Region(1)-Holder(2)-Blk(4)-Year(2)
+Marketing Board: No harv_id as they do not submit cuts
+Freehold: JDI-BH0352803  Distrcit (3)-Blk(4)-Yr (2)"
+,,PLANT_ID,Latest Reforestation treatment identifier,TEXT,"Crown plantid - 13 characters: 203OPDY18BP01  Region(1)-Holder(2)-Blk(4)-Year(2)- Trt (2)- Section(2)
+Marketing Board: TBD
+Freehold: TBD",Identifiant du dernier traitement de reboisement,"Crown plantid - 13 characters: 203OPDY18BP01  Region(1)-Holder(2)-Blk(4)-Year(2)- Trt (2)- Section(2)
+Marketing Board: TBD
+Freehold: TBD"
+,,THIN_ID,Latest Stand Improvement treatment identifier,TEXT,"Crown thinid - 13 characters: 406092015BT01  Region(1)-Holder(2)-Blk(4)-Year(2)- Trt (2)- Section(2)
+Marketing Board: TBD
+Freehold: TBD",Identifiant du dernier traitement d'amélioration du peuplement,"Crown thinid - 13 characters: 406092015BT01  Region(1)-Holder(2)-Blk(4)-Year(2)- Trt (2)- Section(2)
+Marketing Board: TBD
+Freehold: TBD"
+,LHARVTRT,LHARVTRT,Licensee harvest treatment code,TEXT,,Code du traitement de la récolte par le titulaire du permis,
+,,LIC_KEY,Link to licensee database (for use by licensee),TEXT,,Lien vers la base de données sur les titulaires de permis (à l'usage des titulaires de permis),
+,PLU,PLU,Primary land use,TEXT,,Principale utilisation du territoire,
+,SLU,SLU,Specific land use,TEXT,,Utilisation particulière du territoire,
+,STATUS,STATUS,Use indicator,TEXT,,Indicateur de l'utilisation,
+,LC,LC,Land cover code denoting the overall vegetative or non-vegetative nature of the polygon,TEXT,,Code du tapis végétal définissant la nature végétative ou non végétative générale du polygone,
+,WLOC,WLOC,Wetland category,TEXT,,Catégorie de terres humides,
+,WC,WC,Dominant wetland class,TEXT,,Classe de terres humides prédominante,
+,WRI,WRI,Water regime indicator,TEXT,,Indicateur de régime hydrique,
+,IM,IM,Impoundment modifier,TEXT,,Déterminant d'endiguement,
+,VT,VT,Specific vegetation cover type,TEXT,,Type particulier de couverture végétale,
+,SPVC,SPVC,Percent vegetation cover for specific vegetation cover type,SHORT,,Pourcentage de couverture végétale pour un type particulier de couverture végétale,
+,,DATAYR,Year of wetland attribute data (photo year for photo-interpreted wetlands),SHORT,,Année des données sur les attributs des terres humides (année de photographie des terres humides à partir de photos),
+,PSW,PSW,Flag for Provincially Significant Wetland designation,TEXT,,Indicateur de la désignation de terres humides d'importance provinciale,
+,Water_code,WATER_CODE,Water code,TEXT,,Code de l'eau,
+,ECOREGION,ECOREGION,"Based on a StandID polygon, the largest intersecting ecoregion.  Values assigned to non-forest features have no firm basis",SHORT,,"Selon un polygone IDPeupl, la plus importante écorégion croisée. Les valeurs attribuées aux caractéristiques non forestières n'ont aucun fondement solide.",
+,ECODISTRICT,ECODISTRICT,"Based on a StandID polygon, the largest intersecting ecodistrict.  Full expression of an ecodistrict is a concatenation of ecoregion and ecodistrict. Values assigned to non-forest features have no firm basis",SHORT,,"Selon un polygone IDPeupl, le plus important écodistrict croisé. L'expression complète d'un écodistrict est la concaténation d'une écorégion et d'un écodistrict. Les valeurs attribuées aux caractéristiques non forestières n'ont aucun fondement solide.",
+,,LB_ID,"LandBase unique identifier. An ID generated every time the LandBase is created.  In the case of a photo interpretted feature (water body, wetland, forest and non-forest), the ID is based upon and unique to the interpretted feature with any arbitrary boundaries removed (e.g., holder or mapsheet).  In the case of forest activity updates, the ID is based upon and unique to the original input features.  In the case of forest roads, the ID has no firm basis.  Each ID is coded as originatingData_areaOfInterest_InputDataObjectID.  Codes for the starting prefix are: FO-forest interp, NF-non-forest, WL-wetland interp, WB-water body interp, HV-harvest activity updates, RF-reforestation activity updates and SI-stand improvement activity updates.",TEXT,,"Identifiant unique de l'Assiseterritoriale, produit chaque fois que l'Assiseterritoriale est créée. Dans le cas d'une caractéristique interprétée à partir d'une photo (plan d'eau, terre humide, forêt et terre non forestière), l'identifiant est propre à la caractéristique interprétée et formé à partir de celle-ci, et les limites arbitraires sont supprimées (p. ex., détenteur ou feuille de carte). Dans le cas de la mise à jour des activités forestières, l'identifiant est propre aux caractéristiques de saisie originale et formé à partir d'elles. Dans le cas des chemins forestiers, l'identifiant n'a pas de fondement solide. Chaque identifiant est codé comme DonnéeOrigine_secteurInteret_SaisieDonneesIDObjet. Les codes du préfixe de départ sont : FO-interp. de forêt, NF- terre non forestière, TH-interp. de terre humide, PE-interp. de plan d'eau, REC-mises à jour des activités de récolte, REB-mises à jour des activités de reboisement et AP-mises à jour des activités d'amélioration du peuplement.",
+,,SHAPE.AREA,Polygon area in square metres,DOUBLE,,Superficie du polygone en mètres carrés.,
+,,SHAPE.LEN,Polygon perimeter length in metres,DOUBLE,,Longueur du périmètre du polygone en mètres.,
+,,ManStatus,"If present, an estimate of stand management status - based on layer priority",TEXT,"Similar to ManStatusOSM. Exactly 5 characters in length and padded with 'x' for 5 character filler.
+
+YIMOx - natural young, immature, mature, overmature 
+PLANT - plantation 
+PCTxx - pre-commercial thinning 
+PCEAx - partial cut evenaged 
+PCUAx - partial cut unevenaged
+REGEN - regenerating 
+PLTCT - commercial thin plantation
+PCTCT - commercial thin PCT",,
+,,ManStatusOSM,"If present, OSM stand management status - based on layer priority (very similar to ManStatus but groupd up)",TEXT,"None: no recent management history; > 25 years
+PartialCut: partial harvest <= 25 years ago; extensive management
+Clearcut: <= 25 years old no regeneration management
+PCT: was pre-commercially thinned
+Plant: planted and intensively managed through rotation",,
+,,CovType,"If present, stand Cover type - based on layer priority",TEXT,"SW, MW, HW, UK",,
+,,FUNA,"If present, stand FUNA  - based on layer priority",TEXT,Note regen management status types have generalized FUNAs,,
+,,DS,"If present, stand DS - based on layer priority",TEXT,"Y, I, M, O",,
+,,CC,"If present, stand crown closure - based on layer priority",TEXT,"Low CCgrp = [1,61,2,62]; otherwise high CCgrp",,
+,,PoorSiteI,"If present, stand poor site indicator - generalized",TEXT,"sitei in [""P""], funa in ['NCOM'], origin in ['M'], origin in ['B']",,
+,,StandEstabyr,"If present, estimated stand establishment year",TEXT,,,
+,,StandEstabyrSrc,"If present, source of stand establishment year",TEXT,,,
+,,StandAge,"If present, estimated stand age",SHORT,,,
+,,yrSinceTRT,"If present, number of years since being treated",SHORT,,,
+,,SiteClass,"If present, site quality class",SHORT,,,

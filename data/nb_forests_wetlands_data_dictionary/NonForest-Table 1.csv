@@ -1,0 +1,113 @@
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,LandBase,,,,
+,,,,,
+,,,,,
+,NON-FOREST,,,,
+,,,,,
+,Companion document: ,,NB Integrated Land Classification System,,
+,Document accompagnant:,,Système intégré de classification des terres du NB,,
+,,,,,
+,Domain Link,Name,Description,Data Type,Description_F
+,,OBJECTID,Polygon id (internal use),OID,Identificateur de polygone (usage interne)
+,DATASRC,DATASRC,Source of stand attribute data,TEXT,Source des données sur les attributs du peuplement
+,,DATAYR,Year of stand attribute data,LONG,Année des données sur les attributs du peuplement
+,PLU,PLU,Primary land use,TEXT,Principale utilisation du territoire
+,SLU,SLU,Specific land use,TEXT,Utilisation particulière du territoire
+,STATUS,STATUS,Use indicator,TEXT,Indicateur de l'utilisation
+,LC,LC,Land cover code denoting the overall vegetative or non-vegetative nature of the polygon,TEXT,Code du tapis végétal définissant la nature végétative ou non végétative générale du polygone
+,,SHAPE,Feature geometry,TEXT,Géométrie des caractéristiques
+,,SHAPE.AREA,Area of polygon in square metres,DOUBLE,Superficie du polygone en mètres carrés
+,,SHAPE.LEN,Perimeter of polygon in metres,DOUBLE,Périmètre du polygone en mètres
+,,,,,
+,,,,,
+,STATUS INDICATOR,Value,Description,-,Description_F
+,,I,Inactive,-,Inactif
+,,A,Active,-,Actif
+,,   ,Blank,-,Vide
+,,,,,
+,,,,,
+,PRIMARY LAND USE,Value,Description,-,Description_F
+,,AGR,Land primarily used for growing agricultural products or non-timber tree products as well as fields and pasture land ,-,Terre surtout utilisée pour cultiver des produits agricoles et des produits non ligneux ainsi que les champs et pâturages
+,,DND,Land primarily used for National Defense training and exercises,-,Terre surtout utilisée pour l'entraînement et les exercices de la Défense nationale
+,,IND,Land primarily used for industrial purposes including their processing facilities ,-,"Terre surtout utilisée à des fins industrielles, notamment les installations de traitement"
+,,INF,"Land primarily used for transportation, communication and/or utilities",-,"Terre surtout utilisée pour le transport, les communications et/ou les services publics"
+,,REC,"Land primarily used for sport, recreational, cultural and/or entertainment activities ",-,"Terre surtout utilisée pour les activités sportives, récréatives, culturelles et/ou de divertissement"
+,,SET,Land primarily used for urban or rural residential purposes,-,Terre surtout utilisée à des fins résidentielles en milieu urbain ou rural
+,,WIL,Land that is incapable of growing trees and uninfluenced by human activity,-,Terre où il est impossible de cultiver des arbres et qui ne subit pas l'incidence de l'activité humaine
+,,   ,Blank,-,Vide
+,,,,,
+,,,,,
+,SPECIFIC LAND USE,Value,Description,Notes,Description_F
+,,AI,Land used for airstrips ,,Terrain utilisé pour les bandes d'atterrissage
+,,BR,Boat ramp,Added during the 2013-2022 interp cycle,Rampe de mise à l'eau
+,,BW,Breakwater,Added during the 2013-2022 interp cycle,Brise-lames
+,,DM,Dam (polys only),Added during the 2013-2022 interp cycle,Barrage (polygones seulement)
+,,FL,Fish ladder,Added during the 2013-2022 interp cycle,Passe à poissons
+,,GR,Groin/Groyne,Added during the 2013-2022 interp cycle,Épi littoral
+,,WF,Wharf,Added during the 2013-2022 interp cycle,Quai
+,,AR,Abandoned railways,,Voies ferrées abandonnées
+,,BA,"Land occupied by military bases including buildings, parade grounds and installations ",,"Terrain occupé par des bases militaires, y compris les immeubles, les terrains de rassemblement et les installations "
+,,BL,Well-drained barren land that is incapable of growing merchantable sized trees,,Terre stérile bien drainée où ne peuvent pousser des arbres de taille marchande
+,,CB,Cultivated land used for blueberry production,,Terre cultivée servant à la production de bleuets
+,,CG,Land used for campsites including picnic grounds and parking facilities ,,"Terrain utilisé pour des emplacements de camping, y compris les aires de pique-nique et les stationnements"
+,,CH,"Cultivated land used for horticultural purposes; the production of sod, grass, flowers, ornamental trees and shrubs ",,"Terre cultivée servant à des fins horticoles; pour la production de gazon en plaques, de graminées, de fleurs, d'arbres et d'arbustes ornementaux"
+,,CL,Cultivated land used for the production of crops including grains,,"Terre cultivée servant à la production de cultures, y compris des céréales"
+,,CO,Cultivated orchards used for the production of fruit and seeds,,Vergers cultivés servant à la production de fruits et de semences
+,,CS,"Land used for communication purposes such as television, radar and telephone towers ",,"Terrain utilisé pour la communication, comme les tours de télévision, de radar et de téléphonie"
+,,CT,Cultivated land used for the production of Christmas trees,,Terre cultivée servant à la production d'arbres de Noël
+,,EA,Land used for military exercises and maneuvers,,Terrain utilisé pour les exercices et manœuvres militaires
+,,FD,Cultivated crop land protected from the tidal action of the Bay of Fundy ,,Terre cultivée protégée de l'action des marées de la baie de Fundy 
+,,FP,Fallow pasture land,,Pâturage en jachère
+,,FW,Temporary coding for former wetlands which are no longer in the wetland layer ,,Codage temporaire d'anciennes terres humides qui ne font plus partie du territoire humide
+,,GC,Golf courses,,Terrains de golf
+,,GP,Land used for the extraction of soil and gravel ,,Terrain utilisé pour l'extraction de terre et de gravier
+,,IP,"Land occupied by industrial and processing facilities, including storage and parking areas ",,"Terrain occupé par des installations industrielles et de transformation, y compris des zones d'entreposage et de stationnement"
+,,IZ,Impact zones for live ammunition ordinance training ,,Zones d'impact servant à l'entraînement avec des munitions chargées
+,,LE,"Leisure areas including large landscaped open areas used for entertainment purposes, playing fields, zoos, etc. ",,"Zones de loisirs comprenant de grands espaces ouverts paysagers utilisés à des fins de divertissement, comme des terrains de jeux, des parcs zoologiques, etc. "
+,,LF,Landfill sites,,Sites d'enfouissement
+,,NP,Non-Productive Forest (pre-1993 inventory only) ,,Forêt non productive (avant l'inventaire de 1993 seulement) 
+,,OC,"Occupied - city, town, residential area, etc. (to be classified as urban or rural in 2003-2012 inventory) ",,"Occupé - ville, zone résidentielle, etc. (à classer comme zone urbaine ou rurale dans l'inventaire de 2003 à 2012) "
+,,MI,Land used for mining purposes ,,Terrain utilisé à des fins d'exploitation minière
+,,PA,Treed parkland in residential settings ,,Parc arboré en milieu résidentiel
+,,PB,Land used for the extraction of peat ,,Terrain utilisé pour l'extraction de tourbe
+,,PP,Land used for above ground and protected underground pipelines ,,Terrain utilisé pour des pipelines en surface et souterrains protégés
+,,QU,Land used for the extraction and crushing of rock material ,,Terrain utilisé pour l'extraction et le broyage de matérieux rocheux
+,,RD,Provincial highways (DOT roads) ,To be recoded consistent with Transportation feature class once 2013-2022 interp cycle is complete,Routes provinciales (routes du ministère des Transports) 
+,,RF,"Lands located within and along rivers or streams that are periodically scoured by ice flows and possibly devoid of shrub, treed vegetation",,Terrains situés dans et le long de rivières ou de ruisseaux qui sont périodiquement érodés par les glaces et possiblement dépourvus de végétation arbustive et d'arbres
+,,RO,"Rock outcrop, devoid of soil and vegetation ",,"Affleurement rocheux, dépourvu de terre et de végération"
+,,RR,Railroads ,,Chemins de fer
+,,RU,Rural settlements or occupied lands which are outside 1 km of DNR\'s mapped Municipal Areas ,,"Établissements ruraux ou terrains occupés, situés à plus de 1 km des zones municipales cartographiées du MRN "
+,,RY,Land used for road right-of-ways ,,Terrain utilisé pour les emprises routières 
+,,SG,Land used for the treatment of sewage ,,Terrain utilisé pour le traitement des eaux usées 
+,,SK,Land used for ski slopes,,Terrain utilisé pour des pentes de ski
+,,TM,Transmission lines ,,Lignes de transport d'électricité
+,,TR,"Land used for walking, hiking trails ",,Terrain utilisé pour des sentiers de marche et de randonnée
+,,UR,Urban settlements or occupied lands which are within 1 km of DNR\'s mapped Municipal Areas ,,"Établissements urbains ou terrains occupés, situés à moins de 1 km des zones municipales cartographiées du MRN "
+,,WR,Winter roads,,Routes d'hiver
+,,F1,Primary forest road ,Consistent with Transportation feature class,Chemin forestier primaire
+,,F2,Secondary forest road,Consistent with Transportation feature class,Chemin forestier secondaire
+,,F3,Tertiary or limited access forest road (former wood extraction roads now used for secondary resource functions),Consistent with Transportation feature class,Chemin forestier tertiaire ou à accès limité (ancien chemin d'extraction du bois maintenant utilisé pour des activités secondaires liées aux ressources)
+,,F4,Logging roads built within harvest blocks,Consistent with Transportation feature class,Chemin d'exploitation forestière construit à l'intérieur des quadrats de récolte
+,,F5,Poor access roads with a visible road surface,Consistent with Transportation feature class,Routes d'accès de mauvaise qualité dont le revêtement est visible
+,,F6,Abandoned roads with a poorly defined road surface,Consistent with Transportation feature class,Chemins abandonnés dont le revêtement est mal défini
+,,P1,Primary DOT highway,Consistent with Transportation feature class,Route principale du ministère des Transports
+,,P2,Secondary DOT highway,Consistent with Transportation feature class,Route secondaire du ministère des Transports
+,,P3,Non-Crown DOT-serviced  road,Consistent with Transportation feature class,Route autre que de la Couronne desservie par le ministère des Transports
+,,RR,Railroad,Consistent with Transportation feature class,Chemin de fer
+,,TL,"Trails (abandoned railroads converted to trails, etc)",Consistent with Transportation feature class,"Sentier (chemin de fer abandonné, converti en sentier, etc.)"
+,,AR,Abandoned railroads (not part of trail system),Consistent with Transportation feature class,Chemin de fer abandonné (ne faisant pas partie du réseau de sentiers)
+,,  ,Blank,,Vide
+,,,,,
+,,,,,
+,LAND COVER,Value,Description,-,Description_F
+,,NV,Land with little or no vegetation present,-,Terrain où il y a peu ou aucune végétation
+,,VG,"Land vegetated with grasses, crops, or other ground vegetation",-,"Terrain dont la végétation se compose de graminées, de cultures ou d'autres types de végétation au sol"
+,,VS,Land vegetated with shrubs ,-,Terrain dont la végétation se compose d'arbustes
+,,VT,Land vegetated with tree species,-,Terrain dont la végétation se compose d'essences d'arbres
+,,  ,Blank ,-,Vide

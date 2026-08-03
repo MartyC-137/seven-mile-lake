@@ -1,0 +1,77 @@
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,LandBase,,,,,,,
+,,,,,,,,
+,Ecological Land Classification / Classification écologique des terres,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,Ecoregion-Ecodistrict / Écorégion-Écodistrict,,,Background info: ,ELC background,,,
+,Ecosection and ecosite are also decribed in background info,,,,,,,
+,,,,,,,,
+,Ecoregion / Écorégion ,Ecoregion Name,Nom de l'écorégion,Ecodistrict Name / Nom de l'écodistrict,Ecoregion (ER) / Écorégion (ER),Ecodistrict (ED) / Écodistrict (ED),ER-ED,EcoStratum
+,1,Highlands,Hautes terres,Kejwik ,1,1,1-01,1
+,,,,Ganong ,1,2,1-02,2
+,2,Northern Uplands,Bas-plateau du Nord,Upsalquitch ,2,1,2-01,3
+,,,,Tetagouche ,2,2,2-02,3
+,,,,Tjigog ,2,3,2-03,3
+,,,,Tomogonops ,2,4,2-04,4
+,,,,Nicolas Denys ,2,5,2-05,3
+,3,Central Uplands,Bas-plateau central,Madawaska ,3,1,3-01,6
+,,,,Sisson ,3,2,3-02,6
+,,,,Serpentine ,3,3,3-03,6
+,,,,Brighton ,3,4,3-04,6
+,,,,Beadle ,3,5,3-05,6
+,,,,Caledonia ,3,6,3-06,5
+,4,Fundy Coastal,Côtière de Fundy,Fundy ,4,1,4-01,7
+,5,Continental Lowlands,Basses terres continentales,Wapske ,5,1,5-01,8
+,,,,Blue Bell ,5,2,5-02,8
+,,,,Meductic ,5,3,5-03,8
+,,,,Buttermilk ,5,4,5-04,9
+,,,,Cardigan ,5,5,5-05,9
+,,,,Nackawic ,5,6,5-06,9
+,,,,Cranberry ,5,7,5-07,10
+,,,,Magaguadavic ,5,8,5-08,10
+,,,,Yoho ,5,9,5-09,10
+,,,,Mount Pleasant ,5,10,5-10,10
+,,,,Kingston ,5,11,5-11,10
+,,,,Anagance ,5,12,5-12,10
+,6,Eastern Lowlands,Basses terres de l'Est,Tabusintac ,6,1,6-01,11
+,,,,Caraquet ,6,2,6-02,11
+,,,,Red Bank ,6,3,6-03,11
+,,,,Castaway ,6,4,6-04,12
+,,,,Bantalor ,6,5,6-05,12
+,,,,Kouchibouguac ,6,6,6-06,12
+,,,,Petitcodiac ,6,7,6-07,12
+,7,Grand Lake Lowlands,Basses terres du Grand lac,Aukpaque ,7,1,7-01,13
+,,,,Grand Lake ,7,2,7-02,13

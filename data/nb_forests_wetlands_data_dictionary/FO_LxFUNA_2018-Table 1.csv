@@ -1,0 +1,70 @@
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,LandBase,,,,,
+,,,,,,
+,2020 FOREST UNIT NAME,,,,,
+,,,,,,
+,Notes: ,,,,,Notes : 
+,See current diagram…,,,,,
+,2008 FUNA version was approximately when algorithm changed from 17 FUNAs to 44 FUNAs.,,,,,Voir le diagramme actuel…
+,2017 FUNA version was approximately when algorithm introduced FPHW FUNA (45 FUNAs).,,,,,La version 2008 du FUNA était approximative quand l'algorithme est passé de 17 FUNA à 44 FUNA.
+,2018 FUNA version was approximately when algorithm introduced DFDS and DEAD FUNA (47 FUNAs).,,,,,La version 2017 du FUNA était approximative quand le code FPHW du FUNA (45 FUNA) a été instauré dans l'algorithme.
+,2020 FUNA version was approximately when algorithm introduced NSPR FUNA (48 FUNAs).,,,,,La version 2018 du FUNA était approximative quand les codes DFDS et DEAD du FUNA (47 FUNA) ont été instaurés dans l'algorithme.
+,,,,,,
+,Cover Type,Value,Grp,Description,Sort,Description
+,SW,EHSW,,SW cover type eastern hemlock softwood,1,Type de couverture de FR - forêt de pruche du Canada
+,,ECSW,,SW cover type eastern cedar softwood,2,Type de couverture de FR - forêt de cèdre de l'Est
+,,RPSW,,SW cover type red pine softwood,3,Type de couverture de FR - forêt de pin rouge
+,,WPSW,,SW cover type white pine softwood,4,Type de couverture de FR - forêt de pin blanc
+,,JPSW,,SW cover type jack pine softwood,5,Type de couverture de FR - forêt de pin gris
+,,NSPR,,SW cover type Norway spruce,6,Type de couverture de FR -  épinette de Norv
+,,RSPR,,SW cover type red spruce,7,Type de couverture de FR - épinette rouge
+,,WSPR,,SW cover type white spruce,8,Type de couverture de FR - épinette blanche
+,,PSBS,,SW cover type poor site black spruce,9,"Type de couverture de FR - épinette noire, site pauvre"
+,,BSPR,,SW cover type black spruce,10,Type de couverture de FR - épinette noire
+,,SPRC,,SW cover type spruce,11,Type de couverture de FR - épinette de Norvège
+,,BFIR,,SW cover type balsam fir,12,Type de couverture de FR - sapin baumier
+,,TLSW,,SW cover type tamarack larch softwood,13,Type de couverture de FR - forêt de mélèze
+,,BFSP,,SW cover type balsam fir spruce,14,"Type de couverture de FR - sapin baumier, épinette"
+,,BSBF,,SW cover type black spruce balsam fir,15,"Type de couverture de FR - épinette noire, sapin baumier"
+,,RSBF,,SW cover type red spruce balsam fir,16,"Type de couverture de FR - épinette rouge, sapin baumier"
+,,SPBF,,SW cover type spruce fir,17,"Type de couverture de FR - épinette, sapin"
+,,TOSW,,SW cover type tolerant softwood,18,Type de couverture de FR - résineux tolérants
+,,INSW,,SW cover type intolerant softwood,19,Type de couverture de FR - résineux intolérants
+,,DFDS,,SW cover type dead fir and dead spruce  ,20,Type de couverture de FR - sapin mort et épinette morte  
+,,DEAD,,SW cover type dead fir and dead spruce  ,21,Type de couverture de FR - sapin mort et épinette morte 
+,HW,OKHW,,HW cover type oak hardwood,31,Type de couverture de FF - forêt de chêne
+,,FPHW,,HW cover type flood plain hardwood,32,Type de couverture de FF - forêt de feuillus de plaines inondables
+,,BETH,,HW cover type beech tolerant hardwood,33,"Type de couverture de FF - hêtre, feuillu tolérant"
+,,SMTH,,HW cover type sugar maple tolerant hardwood,34,"Type de couverture de FF - érable à sucre, feuillu tolérant"
+,,YBTH,,HW cover type yellow birch tolerant hardwood,35,"Type de couverture de FF - bouleau jaune, feuillu tolérant"
+,,TOHW,,HW cover type tolerant hardwood,36,Type de couverture de FF - feuillus tolérants
+,,THIH,,HW cover type tolerant hardwood and intolerant hardwood,37,Type de couverture de FF - feuillus tolérants et feuillus intolérants
+,,RMHW,,HW cover type red maple hardwood,38,Type de couverture de FF - forêt d'érable rouge
+,,POHW,,HW cover type poplar hardwood,39,Type de couverture de FF - forêt de peuplier
+,,BIHW,,HW cover type birch hardwood,40,Type de couverture de FF - forêt de bouleau
+,,NCOM,,HW cover type non-commercial species,41,Type de couverture de FF - essences non commerciales
+,,THHW,,HW cover type tolerant hardwood and mid-tolerant hardwood,42,Type de couverture de FF - feuillus tolérants et feuillus à tolérance moyenne
+,,IHHW,,HW cover type intolerant hardwood,43,Type de couverture de FF - feuillus intolérants
+,MW,OKMX,,MW cover type oak mixedwood,81,"Type de couverture de FM - chêne, forêt mixte"
+,,EHMX,,MW cover type eastern hemlock mixedwood,82,"Type de couverture de FM - forêt mixte de pruche du Canada, forêt mixte"
+,,ECMX,,MW cover type eastern cedar mixedwood,83,"Type de couverture de FM - cèdre de l'Est, forêt mixte"
+,,PIMX,,MW cover type pine mixedwood,84,"Type de couverture de FM - pin, forêt mixte"
+,,THMX,,MW cover type tolerant hardwood mixedwood,85,Type de couverture de FM - forêt mixte de feuillus tolérants
+,,RSMX,,MW cover type red spruce mixedwood,86,"Type de couverture de FM - épinette rouge, forêt mixte"
+,,SPMX,,MW cover type spruce mixedwood,87,"Type de couverture de FM - épinette, forêt mixte"
+,,BFMX,,HW cover type balsam fir mixedwood,88,"Type de couverture de FR - sapin baumier, forêt mixte"
+,,RMMX,,MW cover type red maple mixedwood,89,"Type de couverture de FM - érable rouge, forêt mixte"
+,,POMX,,MW cover type poplar mixedwood,90,"Type de couverture de FM - peuplier, forêt mixte"
+,,BIMX,,MW cover type birch mixedwood,91,"Type de couverture de FM - bouleau, forêt mixte"
+,,TOMX,,MW cover type tolerant mixedwood,92,Type de couverture de FM - forêt mixte d'essences tolérantes
+,,INMX,,MW cover type intolerant mixedwood,93,Type de couverture de FM - forêt mixte d'essences intolérantes
+,UK,UKWN,,Uknown cover type unknown species,999,
+,    ,    ,,Blank    ,9999,Vide
+,,,,,,
+,FUNA Diagram (matches ArcGIS 10 AssignFUNA Program version: 2.0 [Jan. 2020 - added NSPR FUNA]),,,,,

@@ -1,0 +1,83 @@
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,LandBase,,,,,,,,,
+,,,,,,,,,,
+,HOLDER,,,,,,,,,
+,,,,,,,,,,
+,**Note: Holder code information is tracked and maintained for Crown Lands only.,,,,,,,,,
+,,,,,,,,,,
+,Domain Link,Name,Description,,,,,,,
+,CROWN,CROWN,Crown field is a flag for whether a parcel is Department of Natural Resources and Energy Development (DNRED) | ministere des Ressources naturelles et du Développement de l’énergie Crown Lands. Crown code 1 = Crown Lands. Crown code 2 = purpose unknown. ,,,,,,,
+,HOLDER,HOLDER,Holder of parcel. DNRED Holder updates are typically only done on those lands with a Crown code of 1.,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,Crown*,Holder,Description,Notes,HolderGrp,DNREDCrown Land (Crown =1),GNB Crown Land,NFI_Group,HolderGrp,HolderGrp2
+,1,1,Upsalquitch License Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by AV Cell Inc. ,,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,2,Nepisiquit - Miramichi License  Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by Fornebu Lumber Company Inc.,,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,3,Nepisiquit - Miramichi License  Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by Fornebu Lumber Company Inc.,,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,4,Nepisiquit - Miramichi License  Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by Fornebu Lumber Company Inc.,,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,5,Kent License    Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by the Kent License Management Team.,,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,6,"Queens - Charlotte - Fundy License  Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by J. D. Irving, Limited.",,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,7,"Queens - Charlotte - Fundy License  Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by J. D. Irving, Limited.",,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,8,York License    Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by AV Nackawic Inc.,,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,9,Carleton - Restigouche -Tobique License Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by Twin rivers Paper Company.,,CTL,Y,Y,CL,GOV,GNB_CTL
+,1,10,Carleton - Restigouche -Tobique License Crown Lands and Forests Act Crown Lands subject to Crown Timber License held by Twin rivers Paper Company.,,CTL,Y,Y,CL,GOV,GNB_CTL
+,2,12,Under various landowners ,"As of Spring 2022, some NB Power, SCIERIE CLAUDE COMEAU LTEE, ROCKET ENTERPRISES INC., etc",IF,,,PR,IFH,IF
+,2,13,Under various landowners ,"As of Spring 2022, some E.R. CARBON & TIMBER LTD., MIRAMICHI TIMBERLAND LTD, etc",IF,,,PR,IFH,IF
+,2,16,Lacks update. Mostly industrial freehold owned by J. D. Irving Ltd.,,IF,,,PR,IFH,IF
+,2,18,Under various landowners ,"As of Spring 2022, some HJ CRABBE & SONS LTD, AV GROUP NB INC./GROUPE AV NBI, etc",IF,,,PR,IFH,IF
+,2,19,Under various landowners ,"As of Spring 2022, DYER FOREST PRODUCTS LIMITED, JUNIPER ORGANICS LIMITED",IF,,,PR,IFH,IF
+,2,20,Lacks update. Mostly industrial freehold owned by Acadian Timber Inc. ,,IF,,,PR,IFH,IF
+,2,31,Lacks update. Mostly industrial freehold owned by H. J. Crabbe & Sons Ltd,,IF,,,PR,IFH,IF
+,2,32,Under various landowners ,"As of Spring 2022, NB Inc",IF,,,PR,MKB,IF
+,,33,North Shore Forest Products Marketing Board Farm Products Marketing Act Freehold land not belonging to a large industrial freehold owner within the North Shore Forest Products Marketing Board,,MB,,,PR,MKB,PW
+,,34,Madawaska Forest Products Marketing Board   Farm Products Marketing Act Freehold land not belonging to a large industrial freehold owner within the Madawaska Forest Products Marketing Board,,MB,,,PR,MKB,PW
+,,35,Carleton-Victoria Forest Products Marketing Board   Farm Products Marketing Act Freehold land not belonging to a large industrial freehold owner within the Carleton-Victoria Forest Products Marketing Board,,MB,,,PR,MKB,PW
+,,36,Northumberland County Forest Products Marketing Board   Farm Products Marketing Act Freehold not belonging to a large industrial freehold owner within the Northumberland County Forest Products Marketing Board,,MB,,,PR,MKB,PW
+,,37,York-Sunbury-Charlotte Forest Products Marketing Board  Farm Products Marketing Act Freehold land not belonging to a large industrial freehold owner within the York-Sunbury-Charlotte Forest Products Marketing Board,,MB,,,PR,MKB,PW
+,,38,Southeast New Brunswick Forest Products Marketing Board Farm Products Marketing Act Freehold land not belonging to a large industrial freehold owner within the Southeast New Brunswick Forest Products Marketing Board,,MB,,,PR,MKB,PW
+,,39,Southern New Brunswick Forest Products Marketing Board  Farm Products Marketing Act Freehold land not belonging to a large industrial freehold owner within the Southern New Brunswick Forest Products Marketing Board,,MB,,,PR,MKB,PW
+,,41,"Provincial Government Properties other than DNRE    -   Lands that are provincial government lands, but not administered by the DNR, eg. Department of Transportation Lands, Supply and Services, etc.",,GNB,,Y,CL,GOV,GNB_OTHER
+,,43,Mineral Restricted Freehold     ,,FHmin,,,PR,MKB,OTHER
+,2,49,Indian Reserve  Indian Act* First Nation community,,FN,,,ABOR,GOV,FEDERAL
+,,50,Federal Land    -   Federally Owned Lands,,CAN,,,FL,GOV,FEDERAL
+,1,51,Unassigned Crown Land   Crown Lands and Forests Act Crown Lands that are not part of a commitment such as a lease or Crown Timber License,,CLFAtbd,Y,Y,CL,GOV,GNB_OTHER
+,,52,"Federal Wildlife areas      Bird Sanctuaries, marsh lands, wildlife areas",,CAN,,,FL,GOV,FEDERAL
+,2,53,Military Base (DND)     Federally owned property administered by the Department of National Defense.,,CAN,,,FL,GOV,FEDERAL
+,2,54,National Park       Federally owned property administered as a National Park.,,CAN,,,FL,GOV,FEDERAL
+,1,62,Lands for Wildlife/Plant Species        Land significant for wildlife or important plant species,,UK,Y,Y,CL,GOV,UK
+,1,63,Parks Lands Administered by DNRE    Parks Act   Lands administered under the Parks Act by DNR. May have a commitment as well.,,ParksCLFA,Y,Y,CL,GOV,GNB_OTHER
+,1,65,EHJV lands for wildlife (crown) Crown Lands and Forests Act Special management agreements in partnership with other agencies,,EHJV,Y,Y,CL,GOV,GNB_OTHER
+,,65,EHJV Lands for Wildlife (non-Crown)     Non-Crown Lands held as significant for wildlife in which DNR is a partner,,EHJV,,Y,PR,MKB,OTHER
+,,66,Park Lands Administered by other departments    Parks Act   Lands administered under the Parks Act by departments other than DNR.,,ParksTHC,,Y,CL,GOV,GNB_OTHER
+,1,70,"Active commitment on Crown Land Crown Lands and Forests Act, Minerals Act   Commitments granting use of crown land such as leases, easements, license to occupy etc.  ***Note: not all Leases, Easements or License to Occupy have exclusive use of crown land. Refer to ‘Commitments’ layer in the SDE.",,COMM,Y,Y,CL,GOV,GNB_OTHER
+,,71,Freehold with Reversion Clause. Crown Lands and Forests Act Lands transferred to other Departments that are subject to a reversion clause,,FHrev,,,PR,MKB,PW
+,1,72,Crown Waterfront Reserve    Crown Lands and Forests Act Crown land reserved along watercourses and lakes.,,CWR,Y,Y,CL,GOV,GNB_OTHER
+,1,73,"Crown Reserve Road  Crown Lands and Forests Act A strip of Crown Land that lies between granted or reconveyed lands, reserved for access.",,CRR,Y,Y,CL,GOV,GNB_OTHER
+,,74,Ownership Under Review      Properties that have complex title that are requiring further in-depth research to clarify ownership.,,OWNrev,,,CL,MKB,OTHER
+,1,90,"DNRE Office Properties      Lands that are provincial government lands, and administered by the DNR",,DNREDoffice,Y,Y,CL,GOV,GNB_OTHER
+,,98,"Submerged Land  -   Land covered by water, ownership not determined, case by case research",,SL,,,WATER,H2O,SL
+,,99,"Unreconciled previously submerged land; Land likely NOT covered by water, ownership not determined, case by case research",,Slunrec,,,PR,UK_,Slunrec
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,Crown,Previous Holder,Old Description,,,,,,,
+,,,Previous codes or descriptions no longer in use,,,,,,,
+,,15,Eagle Forest Products   -   Large Industrial Freehold owned by Eagle Forest Products,,,,,,,
+,,32,Ashley Colter Ltd.  -   Large Industrial Freehold owned by Ashley Colter Ltd.,,,,,,,
+,,42,Canadian National Railway   -   Lands that the Canadian National Railway own.,,,,,,,
+,,61,DNR Compensation Wetland        DNR Land acquired through the Wetland Compensation Program,,,,,,,
+,,20,Fraser Paper,,,,,,,
+,2,12,Former Smurfit-Stone Container Corp. properties.,,,,,,,
+,2,13,Former Fornebu Lumber properties,,,,,,,
+,2,18,Former St. Anne-Nackawic Pulp Co. Ltd. ,,,,,,,
+,2,19,Former Juniper Lumber Co. Ltd.,,,,,,,
+,2,31,H. J. Crabbe    -   Large Industrial Freehold owned by H. J. Crabbe,,,,,,,
+,2,32,Uknown,,,,,,,

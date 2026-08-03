@@ -1,0 +1,33 @@
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,LandBase,,,,,
+,,,,,,
+,UNTREATED INDICATOR,,,,,
+,,,,,,
+,Value,Description,Status,Include in LandBase,Description,Statut
+,0,Blank                                                        ,,x,Vide                                                        ,
+,1,Unmapped water / stream buffers,,x,Eaux/zones tampons de cours d'eau non cartographiées,
+,2,Added wildlife buffers or site specific wildlife habitat,,x,Ajout de zones tampons fauniques ou d'un habitat faunique localisé,
+,3,Seasonal Wet Area,,x,Zones humides saisonnières,
+,4,Permanent Wet Area,,x,Zones humides permanentes,
+,5,Steep Areas,,x,Zones abruptes,
+,6,Rocky Areas,,x,Zones rocheuses,
+,7,Immature wood,,x,Arbres immatures,
+,8,Low volume stand (< 50 m3/ha),,x,Faible volume de peuplement (< 50 m3/ha),
+,9,Tolerant Hardwood (TH) Potential,,x,Feuillu tolérant (FT) potentiel,
+,10,Area will be re-submitted,,,Zone nécessitant une nouvelle intervention,
+,11,Permanent Sample Plot,,x,Placette d'échantillonnage permanente,
+,12,Silviculture Potential,,x,Sylviculture possible,
+,13,Public Concerns                                               ,,,Préoccupations du public                                             ,
+,14,Island (Irving),Added 2019-Jun,,Île (Irving),Ajouté en juin 2019
+,15,Not operable (Irving),Added 2019-Jun,,Non exploitable (Irving),Ajouté en juin 2019
+,20,Inaccessible (Acadian Timber),Added 2019-Jun,,Inaccessible (Acadian Timber),Ajouté en juin 2019
+,23,Unkwown documentation - see AV Nackawic - Kevin Lowry,Added 2019-Jun,,Documentation inconnue - voir AV Nackawic - Kevin Lowry,Ajouté en juin 2019
+,43,Permanent stream buffer (Acadian Timber),Added 2019-Jun,x,Zone tampon de cours d'eau permanent (Acadian Timber),Ajouté en juin 2019
+,44,Camp or lease (Acadian Timber),Added 2019-Jun,x,Camp ou bail (Acadian Timber),Ajouté en juin 2019
+,82,Buffer (Fraser freehold),Added 2019-Jun,x,"Zone tampon (Fraser, en franche tenure)",Ajouté en juin 2019

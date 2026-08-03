@@ -1,0 +1,53 @@
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,LandBase,,,,
+,,,,,
+,WATER BODY,,,,
+,,,,,
+,Companion document: ,,NB Integrated Land Classification System,,
+,Document accompagnant:,,Système intégré de classification des terres du NB,,
+,,,,,
+,,,,,
+,Domain Link,Name,Description,Data Type,Description_F
+,,OBJECTID,Polygon id (internal use),OID,Identificateur de polygone (usage interne)
+,Datasrc,DATASRC,Source of stand attribute data,TEXT,Source des données sur les attributs du peuplement
+,,DATAYR,Year of stand attribute data,LONG,Année des données sur les attributs du peuplement
+,Water_code,WATER_CODE,Water code,TEXT,Code de l'eau
+,Buffer_code,BUFFER_CODE,Water buffer code,SHORT,Code de zone tampon de plans d'eau
+,,NAME,Name associated with water body (currently unassigned),TEXT,Nom associé au plan d'eau (actuellement non attribué)
+,,SHAPE.AREA,Polygon area in square metres,DOUBLE,Superficie du polygone en mètres carrés
+,,,,,
+,,,,,
+, DATA SOURCE,Value,Description,-,Description_F
+,,INTERP,Polygon description data added from photo-interpretation ,-,Données sur la description des polygones ajoutées en fonction de l'interprétation à partir de photos
+,,INTRPC,Photo-interpretation has been ground-truthed by DNR staff ,-,Interprétation à partir de photos validée sur le terrain par le personnel du MRN 
+,,INTRPO,Photo-interpretation has been reviewed in office by DNR staff ,-,Interprétation à partir de photos examinée au bureau par le personnel du MRN
+,,INTRPR,Photo-interpretation delineation requires further review when DNR's Ortho coverage becomes available,-,La délimitation de l'interprétation à partir de photos nécessitera un examen plus approfondi quand la couverture orthométrique du MRN sera disponible
+,,INTRPV,Photo-interpretation has been ground-truthed by the photo-interpreter ,-,Interprétation à partir de photos validée sur le terrain par l'interprète des photos
+,,INTRPW,Photo-interpretation has been reviewed in office by DNR Fish and Wildlife staff ,-,Interprétation à partir de photos examinée au bureau par le personnel de la pêche et de la chasse du MRN
+,,UPDATE,Polygon description originally added from a disturbance update ,-,Description de polygone ajoutée au départ à partir de la mise à jour des perturbations
+,,UPDATT,Polygon description originally added from a licensee update ,-,Description des polygones ajoutée au départ à partir de la mise à jour du titulaire du permis
+,,UPDTPW,Polygon description originally added from a private woodlot update,-,Description de polygone ajoutée au départ à partir de la mise à jour du lot boisé privé
+,,      ,Blank,-,Vide
+,,,,,
+,,,,,
+,WATER CODE,Value,Description,-,Description_F
+,,AQ,Aquaculture -saltwater or freshwater areas used for commercial fish-farming ,-,Aquaculture - milieux d'eau salée ou d'eau douce utilisés pour la pisciculture commerciale
+,,LK,Lake -a natural or artificial static body of freshwater which has a maximum depth >2 meters and is >5 hectares in area ,-,Lac - plan d'eau douce statique naturel ou artificiel dont la profondeur maximale est de plus de 2 mètres et la superficie est de plus de 5 hectares
+,,ON,"Ocean - a large body of salt water that is located at, along or near the province\'s coastline ",-,"Océan - grande étendue d'eau salée située sur, le long ou à proximité de la ligne côtière de la province  "
+,,PN,Pond -a static body of freshwater often but not always artificially formed and is usually less than five (5) hectares in area,-,"Étang - plan d'eau douce statique souvent, mais pas toujours, formé artificiellement et dont la superficie est normalement inférieure à 5 hectares"
+,,RV,"River -a watercourse formed when water flows between continuous, definable banks ",-,Rivière - cours d'eau formé lorsque l'eau s'écoule entre des rives continues et définissables
+,,SL,Salt lake -a static body of unvegetated brackish water that is usually located on the inland side of coastal sand dunes ,-,"Lac salé - plan statique d'eau saumâtre dépouvu de végétation, habituellement situé du côté intérieur de dunes de sables côtières"
+,,WA,Water -unspecified body of water,-,Eau - plan d'eau non précisé
+,,  ,Blank ,-,Vide
+,,,,,
+,,,,,
+,WATER BUFFER CODE,Value,Description,-,Description_F
+,,-1,No applicable water buffer ,,Zone tampon sans objet
+,,1,Class 1 water body requiring applicable buffer,-,Plan d'eau de la classe 1 qui requiert la zone tampon applicable
+,,2,Class 2 water body requiring applicable buffer,-,Plan d'eau de la classe 2 qui requiert la zone tampon applicable

@@ -1,0 +1,88 @@
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,LandBase,,,
+,,,,
+,License Harvest Treatment,,,
+,,,,
+,Holder,Value,Description,Description
+,1,CC,Clear-cut,Coupe à blanc
+,1,OR,Overstory removal,Enlèvement de l’étage dominant
+,1,RR,"clear-cut, residual removal","Coupe à blanc, enlèvement des résidus"
+,1,SC,Select cut,Coupe de jardinage
+,1,SH,Shelterwood,Coupe progressive
+,5,CC,Clear-cut,Coupe à blanc
+,5,CT,Commercial thin,Éclaircie commerciale
+,5,PC,Partial cut,Coupe partielle
+,5,ST,Strip cut,Coupe par bandes
+,8,AC,?,?
+,8,BH,?,?
+,8,BU,?,?
+,8,CC,Clear-cut,Coupe à blanc
+,8,CT,Commercial thin,Éclaircie commerciale
+,8,DC,?,?
+,8,DT,?,?
+,8,DY,?,?
+,8,NA,Clearcut,Coupe à blanc
+,8,OC,?,?
+,8,OH,?,?
+,8,OR,Overstory removal,Enlèvement de l’étage dominant
+,8,OS,?,?
+,8,RC,"2nd pass, shelterwood","Deuxième passage, coupe progressive"
+,8,SC,Select cut,Coupe de jardinage
+,8,SD,Seed Tree,Semencier
+,8,SH,Shelterwood,Coupe progressive
+,8,SL,?,?
+,8,ST,Strip cut,Coupe par bandes
+,8,TP,Two pass,Deux passages
+,"2, 3 and 4",CC,Clear-cut,Coupe à blanc
+,"2, 3 and 4",CT,Commercial thin,Éclaircie commerciale
+,"2, 3 and 4",PA,Patch cut,Coupe par trouées
+,"2, 3 and 4",PC,Partial cut,Coupe partielle
+,"2, 3 and 4",RR,"clear-cut, residual removal","Coupe à blanc, enlèvement des résidus"
+,"2, 3 and 4",SC,Select cut,Coupe de jardinage
+,"2, 3 and 4",SH,Shelterwood,Coupe progressive
+,"2, 3 and 4",ST,Strip cut,Coupe par bandes
+,6 and 7,AR,Regen protection cut,Coupe de protection de régénération
+,6 and 7,CC,Clear-cut,Coupe à blanc
+,6 and 7,CP,Patch cut (clearcut),Coupe par trouées (coupe à blanc)
+,6 and 7,CT,Commercial thin,Éclaircie commerciale
+,6 and 7,GS,Group selection (old),Sélection de groupe (âgé)
+,6 and 7,HW,Hardwood partial cut (old),Coupe partielle de feuillus (âgé)
+,6 and 7,ME,Multiple Entry or SB – Stream Buffer,Saisie multiple ou ZT – Zone tampon de cours d'eau
+,6 and 7,MS,Clearcut mortality salvage,"Récupération de mortalité, coupe à blanc"
+,6 and 7,MW,Mixed wood partial cut (old),Coupe partielle de bois mixte (âgé)
+,6 and 7,PC,Partial cut,Coupe partielle
+,6 and 7,PR,Patch Removal,Enlèvement par trouées
+,6 and 7,RR,"clear-cut, residual removal","Coupe à blanc, enlèvement des résidus"
+,6 and 7,SB,Stream Buffer,Zone tampon de cours d'eau
+,6 and 7,SH,Shelterwood,Coupe progressive
+,6 and 7,SW,Softwood partial cut (old),Coupe partielle de résineux (âgé)
+,6 and 7,VR,Variable retention,Rétention variable 
+,9 and 10,CC,Clear-cut,Coupe à blanc
+,9 and 10,CCR,Clearcut with regen protection,Coupe à blanc avec protection de régénération
+,9 and 10,CR,Clearcut with regen protection?,Coupe à blanc avec protection de régénération?
+,9 and 10,CT,Commercial thin,Éclaircie commerciale
+,9 and 10,CTR,Crop tree release (hardwood management),Dégagement d'arbres d'avenir (gestion des feuillus)
+,9 and 10,DS,Dense Shelterwood (hardwood management) changed from PC,Coupe progressive dense (gestion des feuillus) remplace CP
+,9 and 10,DSH,Dense Shelterwood (hardwood management),Coupe progressive dense (gestion des feuillus)
+,9 and 10,FW,Fuelwood?,Bois de chauffage?
+,9 and 10,LR,Log removal,Enlèvement des rondins
+,9 and 10,OR,Overstory removal,Enlèvement de l’étage dominant
+,9 and 10,OS,Overstory removal or regen protection cut,Enlèvement de l’étage dominant ou coupe de protection de régénération
+,9 and 10,OSH,Open shelterwood (hardwood management) changed from RC,Coupe progressive ouverte (gestion des feuillus) remplace DC
+,9 and 10,PA,Patch cut,Coupe par trouées
+,9 and 10,PC,Partial cut,Coupe partielle
+,9 and 10,RC,Overstory removal,Enlèvement de l’étage dominant
+,9 and 10,RR,"clear-cut, residual removal","Coupe à blanc, enlèvement des résidus"
+,9 and 10,SA,Salvage,Récupération
+,9 and 10,SC,Select cut,Coupe de jardinage
+,9 and 10,SE,Seed tree (hardwood management),Semencier (gestion des feuillus)
+,9 and 10,SH,Shelterwood,Coupe progressive
+,9 and 10,SR,Softwood removal,Enlèvement des résineux
+,9 and 10,ST,Strip cut,Coupe par bandes
+,9 and 10,TP,Two pass,Deux passages

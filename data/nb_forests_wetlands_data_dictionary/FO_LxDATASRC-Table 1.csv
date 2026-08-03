@@ -1,0 +1,35 @@
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,LandBase,,,
+,,,,
+,LAYER DATA SOURCE,,,
+,,,,
+,Values,Description,Information Found in,Description
+,IU,"Photo-interpretation has been reconciled with licensee update for year of photography, so does not require updating",LxDATASRC (Forest),"Puisqu'il y a un rapprochement de l'interprétation à partir de photos et de la mise à jour du titulaire du permis pour l'année de la photographie, aucune mise à jour n'est requise"
+,IP,Polygon description data added from photo-interpretation,,Les données sur la description des polygones ont été ajoutées selon l'interprétation à partir de photos
+,IC,Photo-interpretation has been ground-truthed by DNR staff,,L'interprétation à partir de photos a été validée sur le terrain par le personnel du MRN
+,IF,Photo-interpretation was assisted using ground data from NB's Forest Development Survey (FDS),,L'interprétation à partir de photos a été faite à l'aide des données terrain provenant du relevé de la croissance des peuplements forestiers (RCPF) du Nouveau-Brunswick
+,IO,Photo-interpretation has been reviewed in office by DNR staff,,L'interprétation à partir de photos a été examinée au bureau par le personnel du MRN
+,IR,Photo-interpretation delineation requires further review when DNR's Ortho coverage becomes available,,Le tracé des limites de l'interprétation à partir de photos nécessitera un examen plus approfondi une fois que la couverture orthométrique par le MRN sera disponible
+,IV,Photo-interpretation has been ground-truthed by the photo-interpreter,,L'interprétation à partir de photos a été validée sur le terrain par l'interprète des photos
+,IW,Photo-interpretation has been reviewed in office by staff,,L'interprétation à partir de photos a été examinée au bureau par le personnel de la chasse et de la pêche du MRN
+,IX,1980s interpretation: Polygon description data,,Interprétation des années 1980 : données sur la description des polygones
+,UX,1980s interpretation: Update data ,,Interprétation des années 1980 : données de mise à jour
+,SX,1980s interpretation: Update data from survey,,Interprétation des années 1980 : données de mise à jour du relevé
+,UI,Update from imagery (e.g. SPOT),New in 2019,
+,UD,"Update data added from a silvicultural update (e.g. cut, burn, plant)",LxDATASRC (Forest Updates),"Données de mise à jour ajoutées à partir d'une mise à jour sylvicole (p. ex. coupe, brûlis, plantation)"
+,UE,Update data Estimated within 1 year,,Données de mise à jour estimatives de moins d'un an
+,UG,Update data Ground interpreted,,Données de mise à jour interprétées sur le terrain
+,UP,Update data Photo-interpreted,,Données de mise à jour interprétées à partir de photos
+,UQ,Update data Estimated after 1 year,,Données de mise à jour estimatives après un an
+,US,Update data from Survey,,Données de mise à jour provenant du relevé
+,UT,Update data added from a Licensee attribute correction,,Données de mise à jour ajoutées après la correction des attributs du titulaire du permis
+,UW,Update data added from a Private Woodlot disturbance update                                  ,,Données de mise à jour ajoutées après la mise à jour des perturbations d'un lot boisé privé
+,HL,Update data added from historical information which was compiled from various sources prior to the 2003-2012 inventory cycle,LxDATASRC (Historical Forest Updates),Données de mise à jour ajoutées après la compilation des renseignements historiques provenant de diverses sources avant le cycle d'inventaire de 2003 à 2012
+,IG,Updates stands that have been grown with a treatyr history (starting in 2017 south),,
+,,Blank                                         ,All,Vide                                         
