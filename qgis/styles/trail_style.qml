@@ -602,6 +602,13 @@
         </config>
       </editWidget>
     </field>
+    <field configurationFlags="NoFlag" name="Type">
+      <editWidget type="TextEdit">
+        <config>
+          <Option/>
+        </config>
+      </editWidget>
+    </field>
   </fieldConfiguration>
   <aliases>
     <alias field="id_0" index="0" name=""/>
@@ -611,6 +618,7 @@
     <alias field="elev_gain" index="4" name=""/>
     <alias field="elev_desc" index="5" name=""/>
     <alias field="difficulty" index="6" name=""/>
+    <alias field="Type" index="7" name=""/>
   </aliases>
   <defaults>
     <default applyOnUpdate="0" expression="" field="id_0"/>
@@ -620,6 +628,7 @@
     <default applyOnUpdate="0" expression="" field="elev_gain"/>
     <default applyOnUpdate="0" expression="" field="elev_desc"/>
     <default applyOnUpdate="0" expression="" field="difficulty"/>
+    <default applyOnUpdate="0" expression="" field="Type"/>
   </defaults>
   <constraints>
     <constraint constraints="3" exp_strength="0" field="id_0" notnull_strength="1" unique_strength="1"/>
@@ -629,6 +638,7 @@
     <constraint constraints="0" exp_strength="0" field="elev_gain" notnull_strength="0" unique_strength="0"/>
     <constraint constraints="0" exp_strength="0" field="elev_desc" notnull_strength="0" unique_strength="0"/>
     <constraint constraints="0" exp_strength="0" field="difficulty" notnull_strength="0" unique_strength="0"/>
+    <constraint constraints="0" exp_strength="0" field="Type" notnull_strength="0" unique_strength="0"/>
   </constraints>
   <constraintExpressions>
     <constraint desc="" exp="" field="id_0"/>
@@ -638,6 +648,7 @@
     <constraint desc="" exp="" field="elev_gain"/>
     <constraint desc="" exp="" field="elev_desc"/>
     <constraint desc="" exp="" field="difficulty"/>
+    <constraint desc="" exp="" field="Type"/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
@@ -652,6 +663,7 @@
       <column hidden="0" name="length_km" type="field" width="-1"/>
       <column hidden="0" name="elev_gain" type="field" width="-1"/>
       <column hidden="0" name="elev_desc" type="field" width="-1"/>
+      <column hidden="0" name="Type" type="field" width="-1"/>
       <column hidden="1" type="actions" width="-1"/>
     </columns>
   </attributetableconfig>
@@ -693,6 +705,7 @@ def my_form_open(dialog, layer, feature):
     <field editable="1" name="NAME"/>
     <field editable="1" name="NOTES"/>
     <field editable="1" name="PHASE"/>
+    <field editable="1" name="Type"/>
     <field editable="1" name="desc_m_vf"/>
     <field editable="1" name="difficulty"/>
     <field editable="1" name="direction"/>
@@ -721,6 +734,7 @@ def my_form_open(dialog, layer, feature):
     <field labelOnTop="0" name="NAME"/>
     <field labelOnTop="0" name="NOTES"/>
     <field labelOnTop="0" name="PHASE"/>
+    <field labelOnTop="0" name="Type"/>
     <field labelOnTop="0" name="desc_m_vf"/>
     <field labelOnTop="0" name="difficulty"/>
     <field labelOnTop="0" name="direction"/>
@@ -749,6 +763,7 @@ def my_form_open(dialog, layer, feature):
     <field name="NAME" reuseLastValuePolicy="NotAllowed"/>
     <field name="NOTES" reuseLastValuePolicy="NotAllowed"/>
     <field name="PHASE" reuseLastValuePolicy="NotAllowed"/>
+    <field name="Type" reuseLastValuePolicy="NotAllowed"/>
     <field name="desc_m_vf" reuseLastValuePolicy="NotAllowed"/>
     <field name="difficulty" reuseLastValuePolicy="NotAllowed"/>
     <field name="direction" reuseLastValuePolicy="NotAllowed"/>
@@ -794,6 +809,30 @@ def my_form_open(dialog, layer, feature):
         ">
             [% coalesce("notes", 'Unnamed Trail') %]
         &lt;/th>
+    &lt;/tr>
+
+    &lt;!-- Trail Type Row -->
+    &lt;tr>
+        &lt;td colspan="2" style="
+            background: #ffffff;
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        ">
+            &lt;div style="font-size: 10px; text-transform: uppercase; color: #64748b; font-weight: 700; margin-bottom: 2px;">Type&lt;/div>
+            &lt;div style="font-size: 13px; font-weight: 700;">
+                [% if(
+                    lower("Type") = 'approved', 
+                    '&lt;span style="color: #15803d;">✔ Approved&lt;/span>',
+                    if(
+                        lower("Type") = 'concept', 
+                        '&lt;span style="color: #d97706;">💡 Concept&lt;/span>', 
+                        '&lt;span style="color: #64748b;">N/A&lt;/span>'
+                    )
+                ) %]
+            &lt;/div>
+        &lt;/td>
     &lt;/tr>
 
     &lt;!-- Stats Rows -->
