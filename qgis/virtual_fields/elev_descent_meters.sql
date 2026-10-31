@@ -1,5 +1,5 @@
 /* QGIS virtual field for calculating total elevation descent of a polyline */
-with_variable('elev_descent', 0,
+with_variable('elev_desc', 0,
     array_sum(
         array_foreach(
             generate_series(1, num_points($geometry)-1),
